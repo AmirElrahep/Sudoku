@@ -313,6 +313,17 @@ public class Main_App_Controller implements Initializable {
      */
     private ArrayList<Label> createLabelsList() {
         ArrayList<Label> labels = new ArrayList<>();
+        /*
+        Label label = new Label();
+        for (int i = 1; i <= 81; i++) {
+            String name = "lbl"+i;
+
+            label.setId(name);
+            labels.add(label);
+            //paneGame.getChildren().add(label);
+
+        }
+        */
         labels.add(lbl1);
         labels.add(lbl2);
         labels.add(lbl3);

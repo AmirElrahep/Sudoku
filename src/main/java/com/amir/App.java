@@ -1,3 +1,9 @@
+/*
+ * Author: Amir Elrahep
+ * Date: 2/22/2020
+ * Purpose: App class
+ */
+
 package com.amir;
 
 import javafx.application.Application;
@@ -8,16 +14,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * JavaFX App
- */
-public class App extends Application {
 
-    private static Scene scene;
+public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Sudoku"));
+        Scene scene = new Scene(loadFXML("Sudoku"));
         stage.setTitle("Sudoku");
         stage.setScene(scene);
         stage.setResizable(false);
