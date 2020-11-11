@@ -14,8 +14,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import com.amir.model.sudokuGenerator;
 
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 
@@ -313,17 +315,7 @@ public class Main_App_Controller implements Initializable {
      */
     private ArrayList<Label> createLabelsList() {
         ArrayList<Label> labels = new ArrayList<>();
-        /*
-        Label label = new Label();
-        for (int i = 1; i <= 81; i++) {
-            String name = "lbl"+i;
 
-            label.setId(name);
-            labels.add(label);
-            //paneGame.getChildren().add(label);
-
-        }
-        */
         labels.add(lbl1);
         labels.add(lbl2);
         labels.add(lbl3);
@@ -557,7 +549,7 @@ public class Main_App_Controller implements Initializable {
             if (btn.isPressed()) {
                 if (btn.getText().equalsIgnoreCase("easy")) {
                     lblDifficulty.setText("Easy");
-                    K = 25;
+                    K = 2;
                 } else if (btn.getText().equalsIgnoreCase("medium")) {
                     lblDifficulty.setText("Medium");
                     K = 35;
@@ -608,10 +600,12 @@ public class Main_App_Controller implements Initializable {
      * This method makes the player move. Creates a string variable str and sets it to null. Creates an array
      * list of buttons by calling the gameButtonList method. Loops through the array list checking which button
      * is pressed. If the button is the reset button, it calls the clearGameBoard method, if the button is the
-     * clear button, it sets str to null, else it sets str to the button text. Creates a 2d-array of labels by
-     * calling the createGameBoard method. Loops through the 2d-array to find the selected square (label) by
-     * checking the background color and checks if the text fill property is not gray. If it passes the check then
-     * it sets the text to str.
+     * clear button, it sets str to null, else it sets str to the button text. Creates a 2d-array of integers
+     * that represents the current board. Creates a 2d-array of integers representing the solved board. Creates a
+     * 2d-array of labels by calling the createGameBoard method. Loops through the 2d-array to find the selected
+     * square (label) by checking the background color and checks if the text fill property is not gray.
+     * If it passes the check then it sets the text to str and updates the currentBoard. Then it checks if the
+     * currentBoard is equal to the solvedBoard (solution).
      */
     public void makeMove() {
         String str = null;
@@ -629,15 +623,29 @@ public class Main_App_Controller implements Initializable {
             }
         }
 
+        int[][] currentBoard = sg.returnUnsolvedBoard();
+        int[][] solvedBoard = sg.returnSolvedBoard();
         Label[][] board = createGameBoard();
 
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 if (board[row][col].getStyle().equals("-fx-background-color: #3b536b;") &&
                         board[row][col].getTextFill() != Color.GRAY) {
+
                     board[row][col].setText(str);
+
+                    // checking if str is not equal to null in case the user cleared a square
+                    if (str == null) {
+                        currentBoard[row][col] = -9;
+                    } else {
+                        currentBoard[row][col] = Integer.parseInt(str);
+                    }
                 }
             }
+        }
+
+        if (Arrays.deepEquals(currentBoard, solvedBoard)) {
+            System.out.println("Congrats!");
         }
     }
 
