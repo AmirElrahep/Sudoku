@@ -20,6 +20,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Scene scene = new Scene(loadFXML("Sudoku"));
+        scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm());
         stage.setTitle("Sudoku");
         stage.setScene(scene);
         stage.setResizable(false);
