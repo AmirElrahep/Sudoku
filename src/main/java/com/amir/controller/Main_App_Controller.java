@@ -4,7 +4,7 @@
  * Purpose: Controller class for the Main App
  */
 
-package com.amir;
+package com.amir.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
