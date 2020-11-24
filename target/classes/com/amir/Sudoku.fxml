@@ -15,26 +15,26 @@
    <children>
       <AnchorPane fx:id="paneHome" style="-fx-background-color: #34495e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="125.0">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="237.5" AnchorPane.rightAnchor="237.5" AnchorPane.topAnchor="125.0">
                <image>
                   <Image url="@images/logo.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btnNewGame" layoutX="217.0" layoutY="429.0" onMousePressed="#btnNewGamePressed" style="-fx-background-color: #46637f;" text="New Game" textFill="WHITE">
+            <JFXButton fx:id="btnNewGame" layoutX="218.0" layoutY="429.0" onMousePressed="#btnNewGamePressed" stylesheets="@css/style.css" text="New Game" textFill="WHITE" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="217.0">
                <font>
                   <Font size="36.0" />
                </font>
             </JFXButton>
             <AnchorPane layoutX="23.0" layoutY="14.0" prefHeight="75.0" style="-fx-background-color: #46637f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="248.0" layoutY="8.0" text="Sudoku" textFill="WHITE" AnchorPane.topAnchor="8.0">
+                  <Label layoutX="248.0" layoutY="8.0" text="Sudoku" textFill="WHITE" AnchorPane.leftAnchor="247.75" AnchorPane.rightAnchor="247.75" AnchorPane.topAnchor="8.0">
                      <font>
                         <Font size="48.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <Label fx:id="lblVersion" alignment="CENTER" layoutX="144.0" layoutY="900.0" prefHeight="18.0" prefWidth="363.0" text="lable" textFill="WHITE" AnchorPane.bottomAnchor="38.0">
+            <Label fx:id="lblVersion" alignment="CENTER" layoutX="144.0" layoutY="900.0" prefHeight="18.0" prefWidth="363.0" text="label" textFill="WHITE" AnchorPane.bottomAnchor="38.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -46,26 +46,8 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneDifficulty" style="-fx-background-color: #34495e;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="paneDifficulty" style="-fx-background-color: #34495e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane prefHeight="75.0" style="-fx-background-color: #46637f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label layoutX="168.0" layoutY="8.0" text="Select Difficulty" textFill="WHITE" AnchorPane.topAnchor="8.0">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Label>
-                  <JFXButton fx:id="btnDifficultyBack" contentDisplay="CENTER" layoutX="14.0" layoutY="8.0" onMousePressed="#btnDifficultyBackPressed" text=" " AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
-                     <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/back.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </AnchorPane>
             <GridPane layoutX="238.0" layoutY="261.0" prefHeight="404.0" prefWidth="175.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -77,28 +59,46 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <JFXButton fx:id="btnEasy" onMousePressed="#difficultySelected" prefHeight="68.0" prefWidth="172.0" style="-fx-background-color: #46637f;" text="Easy" textFill="WHITE">
+                  <JFXButton fx:id="btnEasy" onMousePressed="#difficultySelected" prefHeight="68.0" prefWidth="172.0" stylesheets="@css/style.css" text="Easy" textFill="WHITE">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnMedium" onMousePressed="#difficultySelected" style="-fx-background-color: #46637f;" text="Medium" textFill="WHITE" GridPane.rowIndex="1">
+                  <JFXButton fx:id="btnMedium" onMousePressed="#difficultySelected" stylesheets="@css/style.css" text="Medium" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnHard" onMousePressed="#difficultySelected" prefHeight="68.0" prefWidth="172.0" style="-fx-background-color: #46637f;" text="Hard" textFill="WHITE" GridPane.rowIndex="2">
+                  <JFXButton fx:id="btnHard" onMousePressed="#difficultySelected" prefHeight="68.0" prefWidth="172.0" stylesheets="@css/style.css" text="Hard" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnEvil" onMousePressed="#difficultySelected" prefHeight="68.0" prefWidth="172.0" style="-fx-background-color: #46637f;" text="Evil" textFill="WHITE" GridPane.rowIndex="3">
+                  <JFXButton fx:id="btnEvil" onMousePressed="#difficultySelected" prefHeight="68.0" prefWidth="172.0" stylesheets="@css/style.css" text="Evil" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </JFXButton>
                </children>
             </GridPane>
+            <AnchorPane prefHeight="75.0" style="-fx-background-color: #46637f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="168.0" layoutY="8.0" text="Select Difficulty" textFill="WHITE" AnchorPane.topAnchor="8.0">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnDifficultyBack" contentDisplay="CENTER" layoutX="14.0" layoutY="8.0" onMousePressed="#btnDifficultyBackPressed" styleClass="back-button" stylesheets="@css/style.css" text=" " AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/back.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="paneGame" layoutX="225.0" layoutY="275.0" style="-fx-background-color: #34495e;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -664,47 +664,47 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <JFXButton fx:id="btnOne" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="1" textFill="WHITE">
+                  <JFXButton fx:id="btnOne" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="1" textFill="WHITE">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnTwo" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="2" textFill="WHITE" GridPane.columnIndex="1">
+                  <JFXButton fx:id="btnTwo" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="2" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnThree" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="3" textFill="WHITE" GridPane.columnIndex="2">
+                  <JFXButton fx:id="btnThree" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="3" textFill="WHITE" GridPane.columnIndex="2">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnFour" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="4" textFill="WHITE" GridPane.columnIndex="3">
+                  <JFXButton fx:id="btnFour" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="4" textFill="WHITE" GridPane.columnIndex="3">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnFive" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="5" textFill="WHITE" GridPane.columnIndex="4">
+                  <JFXButton fx:id="btnFive" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="5" textFill="WHITE" GridPane.columnIndex="4">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnSix" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="6" textFill="WHITE" GridPane.rowIndex="1">
+                  <JFXButton fx:id="btnSix" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="6" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnSeven" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="7" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <JFXButton fx:id="btnSeven" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="7" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnEight" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="8" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <JFXButton fx:id="btnEight" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="8" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="33.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnNine" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="9" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <JFXButton fx:id="btnNine" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="9" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font size="33.0" />
                      </font>
@@ -718,12 +718,12 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <JFXButton fx:id="btnClear" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="Clear" textFill="WHITE">
+                        <JFXButton fx:id="btnClear" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="Clear" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="btnReset" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #46637f;" text="Reset" textFill="WHITE" GridPane.rowIndex="1">
+                        <JFXButton fx:id="btnReset" alignment="CENTER" onMousePressed="#makeMove" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/style.css" text="Reset" textFill="WHITE" GridPane.rowIndex="1">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -734,12 +734,12 @@
             </GridPane>
             <AnchorPane layoutX="25.0" layoutY="-125.0" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: #46637f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton fx:id="btnSolve" alignment="CENTER" layoutX="475.0" layoutY="15.0" onMousePressed="#solvePuzzle" prefHeight="7.0" prefWidth="150.0" style="-fx-background-color: #34495e;" text="Solve" textFill="WHITE" AnchorPane.rightAnchor="25.0">
+                  <JFXButton fx:id="btnSolve" alignment="CENTER" layoutX="475.0" layoutY="15.0" onMousePressed="#solvePuzzle" prefHeight="7.0" prefWidth="150.0" styleClass="menu-buttons" stylesheets="@css/style.css" text="Solve" textFill="WHITE" AnchorPane.rightAnchor="25.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="btnGenerateNewGame" alignment="CENTER" layoutX="300.0" layoutY="15.0" onMousePressed="#generateNewGame" prefHeight="7.0" prefWidth="150.0" style="-fx-background-color: #34495e;" text="New Game" textFill="WHITE" AnchorPane.rightAnchor="200.0">
+                  <JFXButton fx:id="btnGenerateNewGame" alignment="CENTER" layoutX="300.0" layoutY="15.0" onMousePressed="#generateNewGame" prefHeight="7.0" prefWidth="150.0" styleClass="menu-buttons" stylesheets="@css/style.css" text="New Game" textFill="WHITE" AnchorPane.rightAnchor="200.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -749,7 +749,7 @@
                         <Font size="48.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="btnGameBack" contentDisplay="CENTER" layoutX="14.0" layoutY="15.0" onMousePressed="#btnGameBackPressed" text=" " AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                  <JFXButton fx:id="btnGameBack" contentDisplay="CENTER" layoutX="14.0" layoutY="15.0" onMousePressed="#btnGameBackPressed" styleClass="back-button" stylesheets="@css/style.css" text=" " AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                            <image>

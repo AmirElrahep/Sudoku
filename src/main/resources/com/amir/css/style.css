@@ -1,7 +1,24 @@
-.label {
-/*
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-*/
+/* for most buttons in the application */
+.button {
+    -fx-background-color: #46637f;
+}
+
+.button:hover {
+    -fx-background-color: #65829B;
+}
+
+
+/* for the back buttons in the application */
+.back-button:hover {
+    -fx-background-color: #65829B;
+}
+
+
+/* for the menu buttons in the application */
+.menu-buttons {
+    -fx-background-color: #34495e;
+}
+
+.menu-buttons:hover {
+    -fx-background-color: #65829B;
 }
