@@ -647,6 +647,32 @@ public class Main_App_Controller implements Initializable {
         if (Arrays.deepEquals(currentBoard, solvedBoard)) {
             System.out.println("Congrats!");
         }
+
+        // testing
+
+        int num = 1; // number to count occurrences of
+        int count = 0; // number of occurrences
+
+        while (num <= 9) {
+            for (int row = 0; row < 9; row++) {
+                for (int col = 0; col < 9; col++) {
+                    if (currentBoard[row][col] == num) {
+                        count++;
+                    }
+                }
+            }
+            System.out.println(num + " occurs " + count + " time");
+
+            // checking if num occurs 9 times, if so disable button
+            if (count == 9) {
+                buttons.get(num - 1).setDisable(true);
+            }
+
+            count = 0;
+            num++;
+        }// end while loop
+
+
     }
 
 
