@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 import com.amir.model.sudokuGenerator;
 
 import java.net.URL;
+import java.nio.channels.Pipe;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
@@ -431,7 +432,7 @@ public class Main_App_Controller implements Initializable {
      * Creates a 2d-array of labels by calling the createGameBoard method. Loops through the array and
      * sets the background color for each label to be the same.
      */
-    private void restGameBoardColor() {
+    private void resetGameBoardColor() {
         Label[][] board = createGameBoard();
 
         for (int row = 0; row < 9; row++) {
@@ -463,7 +464,7 @@ public class Main_App_Controller implements Initializable {
      * sudokuGenerator object, sg.
      */
     private void eraseGameBoard() {
-        restGameBoardColor();
+        resetGameBoardColor();
         Label[][] board = createGameBoard();
 
         for (int row = 0; row < 9; row++) {
@@ -484,7 +485,7 @@ public class Main_App_Controller implements Initializable {
      * then it stays the same.
      */
     private void clearGameBoard() {
-        restGameBoardColor();
+        resetGameBoardColor();
         Label[][] board = createGameBoard();
 
         for (int row = 0; row < 9; row++) {
@@ -598,7 +599,7 @@ public class Main_App_Controller implements Initializable {
      * selections x and y directions. Changes the color of the selected square (label) to be slightly lighter.
      */
     public void gameBoardSelection() {
-        restGameBoardColor();
+        resetGameBoardColor();
         Label[][] board = createGameBoard();
 
         for (int row = 0; row < 9; row++) {
@@ -657,6 +658,12 @@ public class Main_App_Controller implements Initializable {
         // using value from button pressed to display in puzzle as user input
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
+                System.out.println("row = " + row);
+                System.out.println("col = " + col);
+
+                System.out.println(board[row][col].getStyle());
+                System.out.println(board[row][col].getTextFill().toString());
+
                 if (board[row][col].getStyle().equals("-fx-background-color: #3b536b;") &&
                         board[row][col].getTextFill() != Color.GRAY) {
 
@@ -737,7 +744,7 @@ public class Main_App_Controller implements Initializable {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            restGameBoardColor();
+            resetGameBoardColor();
 
             int[][] tempBoard = sg.returnSolvedBoard();
             Label[][] board = createGameBoard();
