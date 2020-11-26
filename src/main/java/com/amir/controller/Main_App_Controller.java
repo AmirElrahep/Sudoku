@@ -698,7 +698,7 @@ public class Main_App_Controller implements Initializable {
                     }
                 }
             }
-            System.out.println(num + " occurs " + count + " time");
+            System.out.println(num + " occurs " + count + " times");
 
             // if number of occurrences is 9 times, disable corresponding button
             if (count == 9) {
