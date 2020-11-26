@@ -9,15 +9,17 @@ package com.amir.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import com.amir.model.sudokuGenerator;
 
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -289,7 +291,7 @@ public class Main_App_Controller implements Initializable {
      *
      * @return buttons
      */
-    private ArrayList<JFXButton> gameButtonList() {
+    private ArrayList<JFXButton> createGameButtonList() {
         ArrayList<JFXButton> buttons = new ArrayList<>();
         buttons.add(btnOne);
         buttons.add(btnTwo);
@@ -441,6 +443,20 @@ public class Main_App_Controller implements Initializable {
 
 
     /**
+     * This method resets the game button disable property (buttons 1 - 9).
+     * Creates an arrayList of buttons by calling the createButtonList method. Loops through the array and
+     * sets the disable property for each button to false.
+     */
+    private void resetGameButtonDisable() {
+        ArrayList<JFXButton> buttons = createGameButtonList();
+
+        for (JFXButton btn : buttons) {
+            btn.setDisable(false);
+        }
+    }
+
+
+    /**
      * This method erases the game board from everything. It first calls the restGameBoardColor method.
      * Creates a 2d-array of labels by calling the createGameBoard method. Loops through the 2d-array and sets
      * the text fill property to white for each square and sets the each square to null. Re-instantiates the
@@ -487,6 +503,7 @@ public class Main_App_Controller implements Initializable {
      * a 2d-array of integers called tempBoard. A 2d-array of labels, named board, is created and set to the
      * createGameBoard method. Loops through and sets the values from tempBoard to board. Values added to board
      * textFill property are set to grey, indicating that it is the generated puzzle and not the users entry.
+     * Calls the resetGameButtonDisable method.
      */
     private void generatePuzzle() {
         sg.unsolvedPuzzle();
@@ -507,6 +524,8 @@ public class Main_App_Controller implements Initializable {
                 }
             }
         }
+
+        resetGameButtonDisable();
     }
 
 
@@ -538,6 +557,7 @@ public class Main_App_Controller implements Initializable {
      * false and the game pane's visibility to true. Calls the eraseGameBoard method. Creates an array list of
      * buttons bt calling the difficultyButtonList method. Loops through the array list to find the selected button.
      * Sets the value of K depending on the selected difficulty. Calls the generatePuzzle method.
+     * Calls the resetGameButtonDisable method. Calls the makeMove method to disable buttons if needed.
      */
     public void difficultySelected() {
         paneDifficulty.setVisible(false);
@@ -549,10 +569,10 @@ public class Main_App_Controller implements Initializable {
             if (btn.isPressed()) {
                 if (btn.getText().equalsIgnoreCase("easy")) {
                     lblDifficulty.setText("Easy");
-                    K = 2;
+                    K = 2; //20
                 } else if (btn.getText().equalsIgnoreCase("medium")) {
                     lblDifficulty.setText("Medium");
-                    K = 35;
+                    K = 5; //35
                 } else if (btn.getText().equalsIgnoreCase("hard")) {
                     lblDifficulty.setText("Hard");
                     K = 55;
@@ -563,8 +583,10 @@ public class Main_App_Controller implements Initializable {
             }
         }
 
+        resetGameButtonDisable();
         sg = new sudokuGenerator(N, K);
         generatePuzzle();
+        makeMove();
     }
 
 
@@ -609,12 +631,17 @@ public class Main_App_Controller implements Initializable {
      */
     public void makeMove() {
         String str = null;
-        ArrayList<JFXButton> buttons = gameButtonList();
+        ArrayList<JFXButton> buttons = createGameButtonList();
 
+        // getting the value of the button pressed
         for (JFXButton btn : buttons) {
             if (btn.isPressed()) {
                 if (btn.getText().equalsIgnoreCase("reset")) {
                     clearGameBoard();
+                    resetGameButtonDisable();
+                    // this is where the problem is
+                    // calling the clearGameBoard method doesnt result the correct button disable property
+
                 } else if (btn.getText().equalsIgnoreCase("clear")) {
                     str = null;
                 } else {
@@ -627,6 +654,7 @@ public class Main_App_Controller implements Initializable {
         int[][] solvedBoard = sg.returnSolvedBoard();
         Label[][] board = createGameBoard();
 
+        // using value from button pressed to display in puzzle as user input
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 if (board[row][col].getStyle().equals("-fx-background-color: #3b536b;") &&
@@ -636,7 +664,7 @@ public class Main_App_Controller implements Initializable {
 
                     // checking if str is not equal to null in case the user cleared a square
                     if (str == null) {
-                        currentBoard[row][col] = -9;
+                        currentBoard[row][col] = 0;
                     } else {
                         currentBoard[row][col] = Integer.parseInt(str);
                     }
@@ -644,13 +672,15 @@ public class Main_App_Controller implements Initializable {
             }
         }
 
+        // checking if the puzzle is solved by comparing the currentBoard with the solvedBoard
         if (Arrays.deepEquals(currentBoard, solvedBoard)) {
             System.out.println("Congrats!");
         }
 
         // testing
+        resetGameButtonDisable();
 
-        int num = 1; // number to count occurrences of
+        int num = 0; // number to count occurrences of
         int count = 0; // number of occurrences
 
         while (num <= 9) {
@@ -663,15 +693,16 @@ public class Main_App_Controller implements Initializable {
             }
             System.out.println(num + " occurs " + count + " time");
 
-            // checking if num occurs 9 times, if so disable button
+            // if number of occurrences is 9 times, disable corresponding button
             if (count == 9) {
                 buttons.get(num - 1).setDisable(true);
             }
 
+            // setting count back to 0 and incrementing num by 1 to check for the next number
             count = 0;
             num++;
         }// end while loop
-
+        System.out.println("\n");
 
     }
 
@@ -683,29 +714,57 @@ public class Main_App_Controller implements Initializable {
      * is created and set to the createGameBoard method. Loops through and sets the values from tempBoard to board.
      */
     public void solvePuzzle() {
-        restGameBoardColor();
+//        restGameBoardColor();
+//
+//        int[][] tempBoard = sg.returnSolvedBoard();
+//        Label[][] board = createGameBoard();
+//
+//        for (int row = 0; row < 9; row++) {
+//            for (int col = 0; col < 9; col++) {
+//                if (tempBoard[row][col] == 0) {
+//                    board[row][col].setText("");
+//                } else {
+//                    board[row][col].setText(String.valueOf(tempBoard[row][col]));
+//                }
+//            }
+//        }
 
-        int[][] tempBoard = sg.returnSolvedBoard();
-        Label[][] board = createGameBoard();
+        // testing
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Are you sure you want to solve this puzzle?");
+        //alert.setContentText("Are you ok with this?");
 
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
-                if (tempBoard[row][col] == 0) {
-                    board[row][col].setText("");
-                } else {
-                    board[row][col].setText(String.valueOf(tempBoard[row][col]));
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            restGameBoardColor();
+
+            int[][] tempBoard = sg.returnSolvedBoard();
+            Label[][] board = createGameBoard();
+
+            for (int row = 0; row < 9; row++) {
+                for (int col = 0; col < 9; col++) {
+                    if (tempBoard[row][col] == 0) {
+                        board[row][col].setText("");
+                    } else {
+                        board[row][col].setText(String.valueOf(tempBoard[row][col]));
+                    }
                 }
             }
+        } else {
+            // ... user chose CANCEL or closed the dialog
         }
     }
 
 
     /**
      * This method creates a new game. First calls the eraseGameBoard method, then calls the generatePuzzle method.
+     * Calls the makeMove method to disable buttons if needed.
      */
     public void generateNewGame() {
         eraseGameBoard();
         generatePuzzle();
+        makeMove();
     }
 
 
