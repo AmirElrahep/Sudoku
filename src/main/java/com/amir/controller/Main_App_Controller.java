@@ -499,8 +499,6 @@ public class Main_App_Controller implements Initializable {
     }
 
 
-    // testing
-
     /**
      * This method clears the current game board for all user entries. Creates a 2d-array of integers by calling
      * the returnUnsolvedBoard method from the sg object created above. Creates a 2d-array of labels by calling
