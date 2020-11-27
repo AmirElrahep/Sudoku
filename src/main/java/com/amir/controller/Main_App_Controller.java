@@ -482,7 +482,7 @@ public class Main_App_Controller implements Initializable {
      * This method clears the game board form all user entries. It first calls the restGameBoardColor method.
      * Creates a 2d-array of labels by calling the createGameBoard method. Loops through the 2d-array checking
      * if a square's (label's) text fill property is not gray. If not then it sets it equal to null. If it is
-     * then it stays the same.
+     * then it stays the same. Calls the clearCurrentBoard method.
      */
     private void clearGameBoard() {
         resetGameBoardColor();
@@ -492,6 +492,31 @@ public class Main_App_Controller implements Initializable {
             for (int col = 0; col < 9; col++) {
                 if (board[row][col].getTextFill() != Color.GRAY) {
                     board[row][col].setText(null);
+                }
+            }
+        }
+        clearCurrentBoard();
+    }
+
+
+    // testing
+
+    /**
+     * This method clears the current game board for all user entries. Creates a 2d-array of integers by calling
+     * the returnUnsolvedBoard method from the sg object created above. Creates a 2d-array of labels by calling
+     * the createGameBoard method. Loops through the 2d-array checking if a square's (label's) text is equal to null,
+     * if it is then it sets the current location in the currentBoard to 0.
+     */
+    private void clearCurrentBoard() {
+        int[][] currentBoard = sg.returnUnsolvedBoard();
+        Label[][] board = createGameBoard();
+
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                if (board[row][col].getText() != null) {
+                    currentBoard[row][col] = Integer.parseInt(board[row][col].getText());
+                } else {
+                    currentBoard[row][col] = 0;
                 }
             }
         }
@@ -573,7 +598,7 @@ public class Main_App_Controller implements Initializable {
                     K = 2; //20
                 } else if (btn.getText().equalsIgnoreCase("medium")) {
                     lblDifficulty.setText("Medium");
-                    K = 5; //35
+                    K = 35; //35
                 } else if (btn.getText().equalsIgnoreCase("hard")) {
                     lblDifficulty.setText("Hard");
                     K = 55;
@@ -620,17 +645,30 @@ public class Main_App_Controller implements Initializable {
 
 
     /**
-     * This method makes the player move. Creates a string variable str and sets it to null. Creates an array
+     * This method makes the player move.
+     * <p>
+     * -- Part one --
+     * Creates a string variable str and sets it to null. Creates an array
      * list of buttons by calling the gameButtonList method. Loops through the array list checking which button
      * is pressed. If the button is the reset button, it calls the clearGameBoard method, if the button is the
-     * clear button, it sets str to null, else it sets str to the button text. Creates a 2d-array of integers
-     * that represents the current board. Creates a 2d-array of integers representing the solved board. Creates a
-     * 2d-array of labels by calling the createGameBoard method. Loops through the 2d-array to find the selected
-     * square (label) by checking the background color and checks if the text fill property is not gray.
-     * If it passes the check then it sets the text to str and updates the currentBoard. Then it checks if the
-     * currentBoard is equal to the solvedBoard (solution).
+     * clear button, it sets str to null, else it sets str to the button text.
+     * <p>
+     * -- Part two --
+     * Creates a 2d-array of integers that represents the current board. Creates a 2d-array of integers representing
+     * the solved board. Creates a 2d-array of labels by calling the createGameBoard method. Loops through the
+     * 2d-array to find the selected square (label) by checking the background color and checks if the text fill
+     * property is not gray. If it passes the check then it sets the text to str and updates the currentBoard.
+     * <p>
+     * -- Part three --
+     * This part deals with disabling the game buttons (1-9 buttons) based of the number of occurrences each number has.
+     * It calls the resetGameButtonDisable method to enable all of the buttons. Loops through the game and counts the
+     * number of occurrences each number has. If a number occurs 9 times, the button for that number is disabled.
+     * <p>
+     * -- Part four --
+     * Checks if the currentBoard is equal to the solvedBoard (solution).
      */
     public void makeMove() {
+        // -- part one --
         String str = null;
         ArrayList<JFXButton> buttons = createGameButtonList();
 
@@ -639,10 +677,6 @@ public class Main_App_Controller implements Initializable {
             if (btn.isPressed()) {
                 if (btn.getText().equalsIgnoreCase("reset")) {
                     clearGameBoard();
-                    resetGameButtonDisable();
-                    // this is where the problem is
-                    // calling the clearGameBoard method doesnt result the correct button disable property
-
                 } else if (btn.getText().equalsIgnoreCase("clear")) {
                     str = null;
                 } else {
@@ -651,6 +685,7 @@ public class Main_App_Controller implements Initializable {
             }
         }
 
+        // part two --
         int[][] currentBoard = sg.returnUnsolvedBoard();
         int[][] solvedBoard = sg.returnSolvedBoard();
         Label[][] board = createGameBoard();
@@ -658,12 +693,6 @@ public class Main_App_Controller implements Initializable {
         // using value from button pressed to display in puzzle as user input
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                System.out.println("row = " + row);
-                System.out.println("col = " + col);
-
-                System.out.println(board[row][col].getStyle());
-                System.out.println(board[row][col].getTextFill().toString());
-
                 if (board[row][col].getStyle().equals("-fx-background-color: #3b536b;") &&
                         board[row][col].getTextFill() != Color.GRAY) {
 
@@ -679,12 +708,7 @@ public class Main_App_Controller implements Initializable {
             }
         }
 
-        // checking if the puzzle is solved by comparing the currentBoard with the solvedBoard
-        if (Arrays.deepEquals(currentBoard, solvedBoard)) {
-            System.out.println("Congrats!");
-        }
-
-        // testing
+        // -- part three --
         resetGameButtonDisable();
 
         int num = 0; // number to count occurrences of
@@ -698,10 +722,12 @@ public class Main_App_Controller implements Initializable {
                     }
                 }
             }
+            // printing the number and its occurrences to the terminal (for testing purposes)
+            // (uncomment blank line at end of while loop)
             System.out.println(num + " occurs " + count + " times");
 
             // if number of occurrences is 9 times, disable corresponding button
-            if (count == 9) {
+            if (num != 0 && count == 9) {
                 buttons.get(num - 1).setDisable(true);
             }
 
@@ -711,6 +737,10 @@ public class Main_App_Controller implements Initializable {
         }// end while loop
         System.out.println("\n");
 
+        // -- part four --
+        if (Arrays.deepEquals(currentBoard, solvedBoard)) {
+            System.out.println("Congrats!");
+        }
     }
 
 
@@ -721,46 +751,46 @@ public class Main_App_Controller implements Initializable {
      * is created and set to the createGameBoard method. Loops through and sets the values from tempBoard to board.
      */
     public void solvePuzzle() {
-//        restGameBoardColor();
-//
-//        int[][] tempBoard = sg.returnSolvedBoard();
-//        Label[][] board = createGameBoard();
-//
-//        for (int row = 0; row < 9; row++) {
-//            for (int col = 0; col < 9; col++) {
-//                if (tempBoard[row][col] == 0) {
-//                    board[row][col].setText("");
-//                } else {
-//                    board[row][col].setText(String.valueOf(tempBoard[row][col]));
-//                }
-//            }
-//        }
+        resetGameBoardColor();
 
-        // testing
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText("Are you sure you want to solve this puzzle?");
-        //alert.setContentText("Are you ok with this?");
+        int[][] tempBoard = sg.returnSolvedBoard();
+        Label[][] board = createGameBoard();
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            resetGameBoardColor();
-
-            int[][] tempBoard = sg.returnSolvedBoard();
-            Label[][] board = createGameBoard();
-
-            for (int row = 0; row < 9; row++) {
-                for (int col = 0; col < 9; col++) {
-                    if (tempBoard[row][col] == 0) {
-                        board[row][col].setText("");
-                    } else {
-                        board[row][col].setText(String.valueOf(tempBoard[row][col]));
-                    }
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                if (tempBoard[row][col] == 0) {
+                    board[row][col].setText("");
+                } else {
+                    board[row][col].setText(String.valueOf(tempBoard[row][col]));
                 }
             }
-        } else {
-            // ... user chose CANCEL or closed the dialog
         }
+
+//        // testing
+//        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+//        alert.setTitle("Confirmation");
+//        alert.setHeaderText("Are you sure you want to solve this puzzle?");
+//        //alert.setContentText("Are you ok with this?");
+//
+//        Optional<ButtonType> result = alert.showAndWait();
+//        if (result.get() == ButtonType.OK) {
+//            resetGameBoardColor();
+//
+//            int[][] tempBoard = sg.returnSolvedBoard();
+//            Label[][] board = createGameBoard();
+//
+//            for (int row = 0; row < 9; row++) {
+//                for (int col = 0; col < 9; col++) {
+//                    if (tempBoard[row][col] == 0) {
+//                        board[row][col].setText("");
+//                    } else {
+//                        board[row][col].setText(String.valueOf(tempBoard[row][col]));
+//                    }
+//                }
+//            }
+//        } else {
+//            // ... user chose CANCEL or closed the dialog
+//        }
     }
 
 
