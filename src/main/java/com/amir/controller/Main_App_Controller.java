@@ -607,7 +607,6 @@ public class Main_App_Controller implements Initializable {
             }
         }
 
-        resetGameButtonDisable();
         sg = new sudokuGenerator(N, K);
         generatePuzzle();
         makeMove();
