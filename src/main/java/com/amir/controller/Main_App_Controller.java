@@ -446,6 +446,21 @@ public class Main_App_Controller implements Initializable {
 
 
     /**
+     * This method sets the game button disable property (buttons 1 - 9).
+     * Creates an arrayList of buttons by calling the createButtonList method. Loops through the array and
+     * sets the disable property for each button to true.
+     */
+    private void setGameButtonDisable() {
+        ArrayList<JFXButton> buttons = createGameButtonList();
+
+        for (int i = 0; i < 9; i++) {
+            buttons.get(i).setDisable(true);
+
+        }
+    }
+
+
+    /**
      * This method resets the game button disable property (buttons 1 - 9).
      * Creates an arrayList of buttons by calling the createButtonList method. Loops through the array and
      * sets the disable property for each button to false.
@@ -792,6 +807,8 @@ public class Main_App_Controller implements Initializable {
                         }
                     }
                 }
+
+                setGameButtonDisable(); // disabling all of the game buttons
             }
         } catch (IOException e) {
             e.printStackTrace();
