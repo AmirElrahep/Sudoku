@@ -13,13 +13,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import com.amir.model.sudokuGenerator;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.channels.Pipe;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
@@ -450,7 +448,7 @@ public class Main_App_Controller implements Initializable {
      * Creates an arrayList of buttons by calling the createButtonList method. Loops through the array and
      * sets the disable property for each button to true.
      */
-    private void setGameButtonDisable() {
+    private void disableGameButtons() {
         ArrayList<JFXButton> buttons = createGameButtonList();
 
         for (int i = 0; i < 9; i++) {
@@ -465,7 +463,7 @@ public class Main_App_Controller implements Initializable {
      * Creates an arrayList of buttons by calling the createButtonList method. Loops through the array and
      * sets the disable property for each button to false.
      */
-    private void resetGameButtonDisable() {
+    private void enableGameButtons() {
         ArrayList<JFXButton> buttons = createGameButtonList();
 
         for (JFXButton btn : buttons) {
@@ -566,7 +564,7 @@ public class Main_App_Controller implements Initializable {
             }
         }
 
-        resetGameButtonDisable();
+        enableGameButtons();
     }
 
 
@@ -723,7 +721,7 @@ public class Main_App_Controller implements Initializable {
         }
 
         // -- part three --
-        resetGameButtonDisable();
+        enableGameButtons();
 
         int num = 0; // number to count occurrences of
         int count = 0; // number of occurrences
@@ -808,7 +806,7 @@ public class Main_App_Controller implements Initializable {
                     }
                 }
 
-                setGameButtonDisable(); // disabling all of the game buttons
+                disableGameButtons(); // disabling all of the game buttons
             }
         } catch (IOException e) {
             e.printStackTrace();
