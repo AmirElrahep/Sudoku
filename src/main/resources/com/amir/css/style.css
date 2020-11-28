@@ -1,6 +1,8 @@
-/* for most buttons in the application */
+/* for game buttons in the application */
 .button {
     -fx-background-color: #46637f;
+    -fx-text-fill: #ffffff;
+
 }
 
 .button:hover {

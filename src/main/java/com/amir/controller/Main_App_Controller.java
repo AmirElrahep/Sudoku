@@ -6,16 +6,18 @@
 
 package com.amir.controller;
 
+import com.amir.App;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import com.amir.model.sudokuGenerator;
 
+import java.io.IOException;
 import java.net.URL;
 import java.nio.channels.Pipe;
 import java.util.ArrayList;
@@ -748,46 +750,52 @@ public class Main_App_Controller implements Initializable {
      * is created and set to the createGameBoard method. Loops through and sets the values from tempBoard to board.
      */
     public void solvePuzzle() {
-        resetGameBoardColor();
+//        resetGameBoardColor();
 
-        int[][] tempBoard = sg.returnSolvedBoard();
-        Label[][] board = createGameBoard();
-
-        for (int row = 0; row < 9; row++) {
-            for (int col = 0; col < 9; col++) {
-                if (tempBoard[row][col] == 0) {
-                    board[row][col].setText("");
-                } else {
-                    board[row][col].setText(String.valueOf(tempBoard[row][col]));
-                }
-            }
-        }
-
-//        // testing
-//        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//        alert.setTitle("Confirmation");
-//        alert.setHeaderText("Are you sure you want to solve this puzzle?");
-//        //alert.setContentText("Are you ok with this?");
+//        int[][] tempBoard = sg.returnSolvedBoard();
+//        Label[][] board = createGameBoard();
 //
-//        Optional<ButtonType> result = alert.showAndWait();
-//        if (result.get() == ButtonType.OK) {
-//            resetGameBoardColor();
-//
-//            int[][] tempBoard = sg.returnSolvedBoard();
-//            Label[][] board = createGameBoard();
-//
-//            for (int row = 0; row < 9; row++) {
-//                for (int col = 0; col < 9; col++) {
-//                    if (tempBoard[row][col] == 0) {
-//                        board[row][col].setText("");
-//                    } else {
-//                        board[row][col].setText(String.valueOf(tempBoard[row][col]));
-//                    }
+//        for (int row = 0; row < 9; row++) {
+//            for (int col = 0; col < 9; col++) {
+//                if (tempBoard[row][col] == 0) {
+//                    board[row][col].setText("");
+//                } else {
+//                    board[row][col].setText(String.valueOf(tempBoard[row][col]));
 //                }
 //            }
-//        } else {
-//            // ... user chose CANCEL or closed the dialog
 //        }
+
+        // testing new pane
+        resetGameBoardColor();
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Solve_Game_Pane.fxml"));
+            DialogPane newGameDialogPane = fxmlLoader.load();
+
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setDialogPane(newGameDialogPane);
+            dialog.setTitle("Solve Game");
+
+            Optional<ButtonType> result = dialog.showAndWait();
+            if (result.get() == ButtonType.YES) {
+                resetGameBoardColor();
+
+                int[][] tempBoard = sg.returnSolvedBoard();
+                Label[][] board = createGameBoard();
+
+                for (int row = 0; row < 9; row++) {
+                    for (int col = 0; col < 9; col++) {
+                        if (tempBoard[row][col] == 0) {
+                            board[row][col].setText("");
+                        } else {
+                            board[row][col].setText(String.valueOf(tempBoard[row][col]));
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
