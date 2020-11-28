@@ -765,7 +765,7 @@ public class Main_App_Controller implements Initializable {
 //            }
 //        }
 
-        // testing new pane
+        // testing solve game pane
         resetGameBoardColor();
 
         try {
@@ -804,9 +804,28 @@ public class Main_App_Controller implements Initializable {
      * Calls the makeMove method to disable buttons if needed.
      */
     public void generateNewGame() {
-        eraseGameBoard();
-        generatePuzzle();
-        makeMove();
+//        eraseGameBoard();
+//        generatePuzzle();
+//        makeMove();
+
+        // testing new game pane
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("New_Game_Pane.fxml"));
+            DialogPane newGameDialogPane = fxmlLoader.load();
+
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setDialogPane(newGameDialogPane);
+            dialog.setTitle("New Game");
+
+            Optional<ButtonType> result = dialog.showAndWait();
+            if (result.get() == ButtonType.YES) {
+                eraseGameBoard();
+                generatePuzzle();
+                makeMove();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
