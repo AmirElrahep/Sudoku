@@ -8,6 +8,7 @@ package com.amir.controller;
 
 import com.amir.App;
 import com.jfoenix.controls.JFXButton;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -677,7 +678,8 @@ public class Main_App_Controller implements Initializable {
      * number of occurrences each number has. If a number occurs 9 times, the button for that number is disabled.
      * <p>
      * -- Part four --
-     * Checks if the currentBoard is equal to the solvedBoard (solution).
+     * Checks if the currentBoard is equal to the solvedBoard (solution), if so, prompts the user if they want to start
+     * a new game or quit the application via a dialog pane.
      */
     public void makeMove() {
         // -- part one --
@@ -750,21 +752,46 @@ public class Main_App_Controller implements Initializable {
         System.out.println("\n");
 
         // -- part four --
+//        if (Arrays.deepEquals(currentBoard, solvedBoard)) {
+//            System.out.println("Congrats!");
+//        }
+
+        // testing congratulations pane
         if (Arrays.deepEquals(currentBoard, solvedBoard)) {
-            System.out.println("Congrats!");
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Congratulations_Pane.fxml"));
+                DialogPane newGameDialogPane = fxmlLoader.load();
+
+                Dialog<ButtonType> dialog = new Dialog<>();
+                dialog.setDialogPane(newGameDialogPane);
+                dialog.setTitle("Congratulations");
+
+                Optional<ButtonType> result = dialog.showAndWait();
+                if (result.get() == ButtonType.YES) {
+                    startNewGame();
+                } else {
+                    Platform.exit();
+                    System.exit(0);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
 
     /**
-     * This method solves the sudoku puzzle. Calls the restGameBoardColor method. Uses the sudokuGenerator
-     * object, sg, created above. sg calls the SolvedPuzzle method which generates a solved sudoku puzzle.
-     * That puzzle is saved into a 2d-array of integers called tempBoard. A 2d-array of labels, named board,
-     * is created and set to the createGameBoard method. Loops through and sets the values from tempBoard to board.
+     * This method solves the sudoku puzzle if the user accepts the dialog pane. Calls the restGameBoardColor method.
+     * Uses the sudokuGenerator object, sg, created above. sg calls the SolvedPuzzle method which generates a solved
+     * sudoku puzzle. That puzzle is saved into a 2d-array of integers called tempBoard. A 2d-array of labels,
+     * named board, is created and set to the createGameBoard method. Loops through and sets the values from
+     * tempBoard to board.
      */
     public void solvePuzzle() {
+        // (for testing) uncomment following lines and comment out remainder of the method to bypass the dialog pane
 //        resetGameBoardColor();
-
+//
 //        int[][] tempBoard = sg.returnSolvedBoard();
 //        Label[][] board = createGameBoard();
 //
@@ -778,7 +805,6 @@ public class Main_App_Controller implements Initializable {
 //            }
 //        }
 
-        // testing solve game pane
         resetGameBoardColor();
 
         try {
@@ -815,15 +841,16 @@ public class Main_App_Controller implements Initializable {
 
 
     /**
-     * This method creates a new game. First calls the eraseGameBoard method, then calls the generatePuzzle method.
+     * This method creates a new game if the user accepts the dialog pane.
+     * First calls the eraseGameBoard method, then calls the generatePuzzle method.
      * Calls the makeMove method to disable buttons if needed.
      */
     public void generateNewGame() {
+        // (for testing) uncomment following lines and comment out remainder of the method to bypass the dialog pane
 //        eraseGameBoard();
 //        generatePuzzle();
 //        makeMove();
 
-        // testing new game pane
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("New_Game_Pane.fxml"));
             DialogPane newGameDialogPane = fxmlLoader.load();
@@ -841,6 +868,17 @@ public class Main_App_Controller implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    /**
+     * This method creates a new game without user accepting dialog pane. First calls the eraseGameBoard method,
+     * then calls the generatePuzzle method. Calls the makeMove method to disable buttons if needed.
+     */
+    public void startNewGame() {
+        eraseGameBoard();
+        generatePuzzle();
+        makeMove();
     }
 
 
