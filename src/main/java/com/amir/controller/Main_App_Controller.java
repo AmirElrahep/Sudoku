@@ -753,7 +753,6 @@ public class Main_App_Controller implements Initializable {
 
         // -- part four --
         // (for testing) uncomment following lines and comment out remainder of the method to bypass the dialog pane
-
 //        if (Arrays.deepEquals(currentBoard, solvedBoard)) {
 //            System.out.println("Congrats!");
 //        }
