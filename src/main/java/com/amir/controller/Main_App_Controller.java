@@ -452,7 +452,7 @@ public class Main_App_Controller implements Initializable {
     private void disableGameButtons() {
         ArrayList<JFXButton> buttons = createGameButtonList();
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i <= 9; i++) {
             buttons.get(i).setDisable(true);
 
         }
