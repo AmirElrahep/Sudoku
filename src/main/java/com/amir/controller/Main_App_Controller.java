@@ -609,7 +609,7 @@ public class Main_App_Controller implements Initializable {
             if (btn.isPressed()) {
                 if (btn.getText().equalsIgnoreCase("easy")) {
                     lblDifficulty.setText("Easy");
-                    K = 2; //20
+                    K = 20; //20
                 } else if (btn.getText().equalsIgnoreCase("medium")) {
                     lblDifficulty.setText("Medium");
                     K = 35; //35
