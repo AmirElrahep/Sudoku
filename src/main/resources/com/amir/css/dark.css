@@ -112,9 +112,3 @@
 .menu-buttons:hover {
     -fx-background-color: #65829B;
 }
-
-
-/* DIALOG PANE */
-.dialog-Pane {
-    -fx-background-color: #34495e;
-}
