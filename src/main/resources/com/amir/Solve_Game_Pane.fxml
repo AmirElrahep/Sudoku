@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane style="-fx-background-color: #34495e;" stylesheets="@css/dark.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.Solve_Game_Controller">
+<DialogPane stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.Solve_Game_Controller">
    <buttonTypes>
       <ButtonType fx:constant="YES" />
       <ButtonType fx:constant="CANCEL" />

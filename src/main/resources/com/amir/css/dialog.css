@@ -1,0 +1,16 @@
+/* DIALOG PANES */
+/* background color for main panes */
+.root {
+    -fx-background-color: darkgray;
+}
+
+
+/* for game buttons in the application */
+.button {
+    -fx-background-color: gray;
+    -fx-text-fill: #ffffff;
+}
+
+.button:hover {
+    -fx-background-color: lightgray;
+}
