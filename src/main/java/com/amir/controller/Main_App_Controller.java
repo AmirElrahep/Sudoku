@@ -646,7 +646,7 @@ public class Main_App_Controller implements Initializable {
         if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
             row_columnColor = "-fx-background-color: #425d77";
             selectionColor = "-fx-background-color: #3b536b";
-        } else{
+        } else {
             row_columnColor = "-fx-background-color: #90a9c1";
             selectionColor = "-fx-background-color: #849fbb";
         }
@@ -719,7 +719,7 @@ public class Main_App_Controller implements Initializable {
         String selectionColor;
         if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
             selectionColor = "-fx-background-color: #3b536b";
-        } else{
+        } else {
             selectionColor = "-fx-background-color: #849fbb";
         }
 
