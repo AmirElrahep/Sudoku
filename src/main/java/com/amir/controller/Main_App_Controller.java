@@ -438,7 +438,7 @@ public class Main_App_Controller implements Initializable {
 
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                board[row][col].setStyle("-fx-background-color: #34495e;");
+                board[row][col].setStyle(String.valueOf(Color.TRANSPARENT));
             }
         }
     }
@@ -640,17 +640,28 @@ public class Main_App_Controller implements Initializable {
         resetGameBoardColor();
         Label[][] board = createGameBoard();
 
+        // selecting colors based off of what theme is selected (dark/light)
+        String row_columnColor;
+        String selectionColor;
+        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
+            row_columnColor = "-fx-background-color: #425d77";
+            selectionColor = "-fx-background-color: #3b536b";
+        } else{
+            row_columnColor = "-fx-background-color: #90a9c1";
+            selectionColor = "-fx-background-color: #849fbb";
+        }
+
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 // checking if a selection is made
                 if (board[row][col].isPressed()) {
                     // changing the colors of the column and row of the selected label
                     for (int i = 0; i < 9; i++) {
-                        board[i][col].setStyle("-fx-background-color: #425d77;");
-                        board[row][i].setStyle("-fx-background-color: #425d77;");
+                        board[i][col].setStyle(row_columnColor);
+                        board[row][i].setStyle(row_columnColor);
                     }
                     // changing the color of the selected label to a lighter color
-                    board[row][col].setStyle("-fx-background-color: #3b536b;");
+                    board[row][col].setStyle(selectionColor);
                 }
             }
         }
@@ -704,10 +715,18 @@ public class Main_App_Controller implements Initializable {
         int[][] solvedBoard = sg.returnSolvedBoard();
         Label[][] board = createGameBoard();
 
+        // selecting colors based off of what theme is selected (dark/light)
+        String selectionColor;
+        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
+            selectionColor = "-fx-background-color: #3b536b";
+        } else{
+            selectionColor = "-fx-background-color: #849fbb";
+        }
+
         // using value from button pressed to display in puzzle as user input
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                if (board[row][col].getStyle().equals("-fx-background-color: #3b536b;") &&
+                if (board[row][col].getStyle().equals(selectionColor) &&
                         board[row][col].getTextFill() != Color.GRAY) {
 
                     board[row][col].setText(str);
