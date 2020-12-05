@@ -48,6 +48,7 @@
     -fx-text-fill: -fx-secondarytext;
 }
 
+
 /* The item's label (hovered / focused) */
 .menu-item:focused .label, .menu-item:hover .label {
     -fx-text-fill: -fx-secondarytext;
@@ -65,9 +66,11 @@
     -fx-text-fill: -fx-secondarytext;
 }
 
+/*
 .colored-context-menu, .menu-item:focused, .label {
     -fx-text-fill: -fx-primarytext;
 }
+*/
 
 
 /* Application */
