@@ -5,6 +5,7 @@
     /*-fx-secondary: #1976D2;*/
     /*-fx-secondary: #e8eaee;*/
     -fx-primarytext: #FFFFFF;
+    -fx-secondarytext: #000000;
     /*-fx-primarytext: #B2B2B2;*/
     -fx-blue: #1976D2;
 
@@ -25,6 +26,51 @@
     -fx-background-color: -fx-primary;
 }
 
+
+/* Menu bar */
+.menu-bar {
+    -fx-font-size: 14;
+    -fx-base: -fx-primary;
+    -fx-background-color: -fx-primary;
+}
+
+/* Top-level menu itself (selected / hovered) */
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background-color: -fx-secondary;
+}
+
+/* Top-level menu's label (selected / hovered) */
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing > .label {
+    -fx-text-fill: -fx-secondarytext;
+}
+
+/* The item's label (hovered / focused) */
+.menu-item:focused .label, .menu-item:hover .label {
+    -fx-text-fill: -fx-secondarytext;
+}
+
+/* Context menu */
+.context-menu {
+    -fx-background-color: derive(-fx-primary, 25%);
+    -fx-font-size: 14;
+    /*-fx-min-width: 150px;*/
+}
+
+.colored-context-menu, .menu-item:focused {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-secondarytext;
+}
+
+.colored-context-menu, .menu-item:focused, .label {
+    -fx-text-fill: -fx-primarytext;
+}
+
+
+/* Application */
 .button {
     -fx-text-fill: -fx-primarytext;
     -fx-background-color: -fx-primary;
@@ -40,26 +86,3 @@
     -fx-text-fill: -fx-primary;
 }
 
-/*Menu bar Styling*/
-.menu-bar {
-    -fx-font-size: 14;
-    -fx-base: -fx-primary;
-    -fx-background-color: -fx-primary;
-}
-
-.context-menu {
-    /*-fx-background-color: derive(-fx-primary, 20%);*/
-    -fx-font-size: 14;
-    /*-fx-min-width: 150px;*/
-}
-
-
-/* Context menu */
-.colored-context-menu .menu-item:focused {
-    -fx-background-color: -fx-secondary;
-    -fx-text-fill: black;
-}
-
-.colored-context-menu .menu-item:focused .label {
-    -fx-text-fill: black;
-}

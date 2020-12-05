@@ -4,7 +4,7 @@
     -fx-my-menu-color: gray;
     -fx-my-menu-color-highlighted: darkgray;
     -fx-my-menu-font-color: #ffffff;
-    -fx-my-menu-font-color-highlighted: #ffffff;
+    -fx-my-menu-font-color-highlighted: #000000;
 }
 
 /* MENU BAR + Top-level MENU BUTTONS */
