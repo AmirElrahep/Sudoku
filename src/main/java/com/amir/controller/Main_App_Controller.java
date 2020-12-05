@@ -268,9 +268,22 @@ public class Main_App_Controller implements Initializable {
     private sudokuGenerator sg = new sudokuGenerator();
 
     // testing
-    private String primaryColor = "-fx-background-color: #2A2E37";
-    private String secondaryColor = "-fx-background-color: #92D1C2"; //00bcf2
-    private String selectionColor = "-fx-background-color: #353a45";
+//    private String primaryColor = "-fx-background-color: #2A2E37";
+//    private String secondaryColor = "-fx-background-color: #92D1C2"; //00bcf2
+//    private String selectionColor = "-fx-background-color: #353a45";
+
+    private String secondaryColor;
+    private String selectionColor;
+
+    private void themeColor() {
+        if (btnReset.getBackground().getFills().toString().equalsIgnoreCase("[javafx.scene.layout.BackgroundFill@19665c40]")) {
+            secondaryColor = "-fx-background-color: #92D1C2";
+            selectionColor = "-fx-background-color: #353a45";
+        } else {
+            secondaryColor = "-fx-background-color: #2A2E37";
+            selectionColor = "-fx-background-color: #a4d9cc";
+        }
+    }
 
 
     // private helper methods
@@ -656,6 +669,8 @@ public class Main_App_Controller implements Initializable {
 //            selectionColor = "-fx-background-color: #849fbb";
 //        }
 
+        themeColor(); // calling the theme color method
+
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 // checking if a selection is made
@@ -727,6 +742,8 @@ public class Main_App_Controller implements Initializable {
 //        } else {
 //            selectionColor = "-fx-background-color: #849fbb";
 //        }
+
+        themeColor(); // calling the theme color method
 
         // using value from button pressed to display in puzzle as user input
         for (int row = 0; row < 9; row++) {
