@@ -267,6 +267,11 @@ public class Main_App_Controller implements Initializable {
     private int K = 0;
     private sudokuGenerator sg = new sudokuGenerator();
 
+    // testing
+    private String primaryColor = "-fx-background-color: #2A2E37";
+    private String secondaryColor = "-fx-background-color: #92D1C2"; //00bcf2
+    private String selectionColor = "-fx-background-color: #353a45";
+
 
     // private helper methods
 
@@ -641,15 +646,15 @@ public class Main_App_Controller implements Initializable {
         Label[][] board = createGameBoard();
 
         // selecting colors based off of what theme is selected (dark/light)
-        String row_columnColor;
-        String selectionColor;
-        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
-            row_columnColor = "-fx-background-color: #425d77";
-            selectionColor = "-fx-background-color: #3b536b";
-        } else {
-            row_columnColor = "-fx-background-color: #90a9c1";
-            selectionColor = "-fx-background-color: #849fbb";
-        }
+//        String row_columnColor;
+//        String selectionColor;
+//        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
+//            row_columnColor = "-fx-background-color: #425d77";
+//            selectionColor = "-fx-background-color: #3b536b";
+//        } else {
+//            row_columnColor = "-fx-background-color: #90a9c1";
+//            selectionColor = "-fx-background-color: #849fbb";
+//        }
 
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
@@ -657,8 +662,8 @@ public class Main_App_Controller implements Initializable {
                 if (board[row][col].isPressed()) {
                     // changing the colors of the column and row of the selected label
                     for (int i = 0; i < 9; i++) {
-                        board[i][col].setStyle(row_columnColor);
-                        board[row][i].setStyle(row_columnColor);
+                        board[i][col].setStyle(secondaryColor);
+                        board[row][i].setStyle(secondaryColor);
                     }
                     // changing the color of the selected label to a lighter color
                     board[row][col].setStyle(selectionColor);
@@ -716,12 +721,12 @@ public class Main_App_Controller implements Initializable {
         Label[][] board = createGameBoard();
 
         // selecting colors based off of what theme is selected (dark/light)
-        String selectionColor;
-        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
-            selectionColor = "-fx-background-color: #3b536b";
-        } else {
-            selectionColor = "-fx-background-color: #849fbb";
-        }
+//        String selectionColor;
+//        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
+//            selectionColor = "-fx-background-color: #3b536b";
+//        } else {
+//            selectionColor = "-fx-background-color: #849fbb";
+//        }
 
         // using value from button pressed to display in puzzle as user input
         for (int row = 0; row < 9; row++) {
@@ -912,7 +917,7 @@ public class Main_App_Controller implements Initializable {
         //createGameBoard(); // calling the createGameBoard method
         //generatePuzzle(); // calling the generatePuzzle method
 
-        lblVersion.setText("Version 1.0.0, built on May 10, 2020");
+        lblVersion.setText("Version 1.0, built on May 10, 2020");
         paneHome.setVisible(true);
         paneDifficulty.setVisible(false);
         paneGame.setVisible(false);
