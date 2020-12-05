@@ -1,114 +1,91 @@
-/* MENU */
-/* variable definitions for menu bar */
+/* variable definitions */
 * {
-    -fx-my-menu-color: gray;
-    -fx-my-menu-color-highlighted: darkgray;
-    -fx-my-menu-font-color: #ffffff;
-    -fx-my-menu-font-color-highlighted: #000000;
+    -fx-primary: #92D1C2; /*2A2E37*/
+    -fx-secondary: #2A2E37; /*00bcf2*/
+    /*-fx-secondary: #1976D2;*/
+    /*-fx-secondary: #e8eaee;*/
+    -fx-primarytext: #000000;
+    -fx-secondarytext: #FFFFFF;
+    /*-fx-primarytext: #B2B2B2;*/
+    -fx-blue: #1976D2;
+
+    /* possible secondary colors
+    00bcf2
+    31c6c0
+    47d041
+    1976D2
+
+    ACCACF
+    9AB5BA
+    A1C3BB
+    92D1C2
+     */
 }
 
-/* MENU BAR + Top-level MENU BUTTONS */
-/* The menu bar itself */
+.root {
+    -fx-background-color: -fx-primary;
+}
+
+
+/* Menu bar */
 .menu-bar {
-    -fx-background-color: -fx-my-menu-color;
-}
-
-/* Top-level menu itself (not selected / hovered) */
-.menu-bar > .container > .menu-button {
-    -fx-background-color: -fx-my-menu-color;
-}
-
-/* Top-level menu's label (not selected / hovered) */
-.menu-bar > .container > .menu-button > .label {
-    -fx-text-fill: -fx-my-menu-font-color;
-}
-
-/* Top-level menu's label (disabled) */
-.menu-bar > .container > .menu-button > .label:disabled {
-    -fx-opacity: 1.0;
+    -fx-font-size: 14;
+    -fx-base: -fx-primary;
+    -fx-background-color: -fx-primary;
 }
 
 /* Top-level menu itself (selected / hovered) */
 .menu-bar > .container > .menu-button:hover,
 .menu-bar > .container > .menu-button:focused,
 .menu-bar > .container > .menu-button:showing {
-    -fx-background-color: -fx-my-menu-color-highlighted;
+    -fx-background-color: -fx-secondary;
 }
 
 /* Top-level menu's label (selected / hovered) */
 .menu-bar > .container > .menu-button:hover > .label,
 .menu-bar > .container > .menu-button:focused > .label,
 .menu-bar > .container > .menu-button:showing > .label {
-    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+    -fx-text-fill: -fx-secondarytext;
 }
 
-/* MENU ITEM (children of a MENU BUTTON) */
-/* The item itself (not hovered / focused) */
-.menu-item {
-    -fx-background-color: -fx-my-menu-color;
-}
-
-/* The item's label (not hovered / focused) */
-.menu-item .label {
-    -fx-text-fill: -fx-my-menu-font-color;
-}
-
-/* The item's label (disabled) */
-.menu-item .label:disabled {
-    -fx-opacity: 1.0;
-}
-
-/* The item itself (hovered / focused) */
-.menu-item:focused, .menu-item:hover {
-    -fx-background-color: -fx-my-menu-color-highlighted;
-}
 
 /* The item's label (hovered / focused) */
 .menu-item:focused .label, .menu-item:hover .label {
-    -fx-text-fill: -fx-my-menu-font-color-highlighted;
+    -fx-text-fill: -fx-secondarytext;
 }
 
-/* CONTEXT MENU */
-/* The context menu that contains a menu's menu items */
+/* Context menu */
 .context-menu {
-    -fx-background-color: -fx-my-menu-color;
+    -fx-background-color: derive(-fx-primary, 25%);
+    -fx-font-size: 14;
+    /*-fx-min-width: 150px;*/
 }
 
-
-/* APPLICATION */
-/* background color for main panes */
-.anchor-main {
-    -fx-background-color: #7795b4;
+.colored-context-menu, .menu-item:focused {
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-secondarytext;
 }
 
-/* background color for header anchor panes*/
-.anchor-header {
-    -fx-background-color: #98afc6;
+/*
+.colored-context-menu, .menu-item:focused, .label {
+    -fx-text-fill: -fx-primarytext;
 }
+*/
 
 
-/* for game buttons in the application */
+/* Application */
 .button {
-    -fx-background-color: #98afc6;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 18pt;
 }
 
 .button:hover {
-    -fx-background-color: #c1cdd7;
+    -fx-border-color: -fx-secondary;
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primary;
 }
 
-
-/* for the back buttons in the application */
-.back-button:hover {
-    -fx-background-color: #c1cdd7;
-}
-
-
-/* for the menu buttons in the application */
-.menu-buttons {
-    -fx-background-color: #7795b4;
-}
-
-.menu-buttons:hover {
-    -fx-background-color: #c1cdd7;
-}
