@@ -1,13 +1,9 @@
 /* variable definitions */
 * {
-    -fx-primary: #2B2B2B; /*2A2E37*/
-    -fx-secondary: #ACACAC; /*00bcf2*/
-    /*-fx-secondary: #1976D2;*/
-    /*-fx-secondary: #e8eaee;*/
+    -fx-primary: #2B2B2B;
+    -fx-secondary: #ACACAC;
     -fx-primarytext: #FFFFFF;
     -fx-secondarytext: #000000;
-    /*-fx-primarytext: #B2B2B2;*/
-    -fx-blue: #1976D2;
 
     /* possible secondary colors
     00bcf2
@@ -24,14 +20,15 @@
 
 .root {
     -fx-background-color: -fx-primary;
+    -fx-font-family: ".SF NS Mono";
 }
 
 
 /* Menu bar */
 .menu-bar {
-    -fx-font-size: 14;
-    -fx-base: -fx-primary;
     -fx-background-color: -fx-primary;
+    -fx-base: -fx-primary;
+    -fx-font-size: 14;
 }
 
 /* Top-level menu itself (selected / hovered) */
@@ -58,7 +55,6 @@
 .context-menu {
     -fx-background-color: derive(-fx-primary, 25%);
     -fx-font-size: 14;
-    /*-fx-min-width: 150px;*/
 }
 
 .colored-context-menu, .menu-item:focused {
@@ -66,26 +62,23 @@
     -fx-text-fill: -fx-secondarytext;
 }
 
-/*
-.colored-context-menu, .menu-item:focused, .label {
-    -fx-text-fill: -fx-primarytext;
-}
-*/
-
 
 /* Application */
 .button {
-    -fx-text-fill: -fx-primarytext;
     -fx-background-color: -fx-primary;
+    -fx-background-radius: 10px;
     -fx-border-color: -fx-secondary;
     -fx-border-radius: 10px;
-    -fx-background-radius: 10px;
+    -fx-text-fill: -fx-primarytext;
     -fx-font-size: 18pt;
 }
 
 .button:hover {
-    -fx-border-color: -fx-secondary;
     -fx-background-color: -fx-secondary;
+    -fx-border-color: -fx-secondary;
     -fx-text-fill: -fx-primary;
 }
 
+.label{
+    -fx-font-family: ".SF NS Mono";
+}

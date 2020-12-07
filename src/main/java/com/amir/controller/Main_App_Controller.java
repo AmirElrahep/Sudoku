@@ -272,16 +272,16 @@ public class Main_App_Controller implements Initializable {
 //    private String secondaryColor = "-fx-background-color: #92D1C2"; //00bcf2
 //    private String selectionColor = "-fx-background-color: #353a45";
 
-    private String secondaryColor;
-    private String selectionColor;
+    private final String secondaryColor = "-fx-background-color: #3B3F41";
+    private final String selectionColor = "-fx-background-color: #53595c";
 
     private void themeColor() {
         if (btnReset.getBackground().getFills().toString().equalsIgnoreCase("[javafx.scene.layout.BackgroundFill@19665c40]")) {
-            secondaryColor = "-fx-background-color: #3B3F41";
-            selectionColor = "-fx-background-color: #53595c";
+//            secondaryColor = "-fx-background-color: #3B3F41";
+//            selectionColor = "-fx-background-color: #53595c";
         } else {
-            secondaryColor = "-fx-background-color: #3B3F41";
-            selectionColor = "-fx-background-color: #53595c";
+//            secondaryColor = "-fx-background-color: #3B3F41";
+//            selectionColor = "-fx-background-color: #53595c";
         }
     }
 
