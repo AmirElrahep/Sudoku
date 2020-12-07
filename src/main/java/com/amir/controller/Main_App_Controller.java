@@ -277,11 +277,11 @@ public class Main_App_Controller implements Initializable {
 
     private void themeColor() {
         if (btnReset.getBackground().getFills().toString().equalsIgnoreCase("[javafx.scene.layout.BackgroundFill@19665c40]")) {
-            secondaryColor = "-fx-background-color: #92D1C2";
-            selectionColor = "-fx-background-color: #353a45";
+            secondaryColor = "-fx-background-color: #3B3F41";
+            selectionColor = "-fx-background-color: #53595c";
         } else {
-            secondaryColor = "-fx-background-color: #2A2E37";
-            selectionColor = "-fx-background-color: #a4d9cc";
+            secondaryColor = "-fx-background-color: #3B3F41";
+            selectionColor = "-fx-background-color: #53595c";
         }
     }
 
