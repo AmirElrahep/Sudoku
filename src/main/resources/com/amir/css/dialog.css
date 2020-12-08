@@ -1,16 +1,33 @@
-/* DIALOG PANES */
-/* background color for main panes */
+/* variable definitions */
+* {
+    -fx-primary: #3B3F41;
+    -fx-secondary: #ACACAC;
+    -fx-primarytext: #FFFFFF;
+    -fx-secondarytext: #000000;
+}
+
 .root {
-    -fx-background-color: darkgray;
+    -fx-background-color: -fx-primary;
+    -fx-font-family: ".SF NS Mono";
 }
 
 
-/* for game buttons in the application */
+/* Application */
 .button {
-    -fx-background-color: gray;
-    -fx-text-fill: #ffffff;
+    -fx-background-color: -fx-primary;
+    -fx-background-radius: 10px;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 10px;
+    -fx-text-fill: -fx-primarytext;
 }
 
 .button:hover {
-    -fx-background-color: lightgray;
+    -fx-background-color: -fx-secondary;
+    -fx-border-color: -fx-secondary;
+    -fx-text-fill: -fx-secondarytext;
+}
+
+.label {
+    -fx-text-fill: -fx-primarytext;
+    -fx-font-family: ".SF NS Mono";
 }
