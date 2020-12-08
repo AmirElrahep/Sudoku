@@ -64,7 +64,7 @@
 .button:hover {
     -fx-background-color: -fx-secondary;
     -fx-border-color: -fx-secondary;
-    -fx-text-fill: -fx-primary;
+    -fx-text-fill: -fx-secondarytext;
 }
 
 .label{
