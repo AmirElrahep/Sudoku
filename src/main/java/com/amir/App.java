@@ -56,19 +56,26 @@ public class App extends Application {
 
         // switching between dark mode/light mode
         MenuItem dark = new MenuItem("Dark Mode");
+        MenuItem light = new MenuItem("Light Mode");
+
         dark.setOnAction(ae -> {
             scene.getStylesheets().clear();
             setUserAgentStylesheet(null);
             scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
+            dark.setStyle("-fx-text-fill: #CF5C36");
+            light.setStyle(null);
+
         });
 
-        MenuItem light = new MenuItem("Light Mode");
         light.setOnAction(ae -> {
             scene.getStylesheets().clear();
             setUserAgentStylesheet(null);
             scene.getStylesheets().add(getClass().getResource("css/light.css").toExternalForm());
+            light.setStyle("-fx-text-fill: #CF5C36");
+            dark.setStyle(null);
         });
 
+        dark.setStyle("-fx-text-fill: #CF5C36");
         themeMenu.getItems().addAll(dark, light);
 
         // help menu
