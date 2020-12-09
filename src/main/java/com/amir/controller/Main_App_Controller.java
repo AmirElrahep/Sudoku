@@ -810,6 +810,8 @@ public class Main_App_Controller implements Initializable {
                 Optional<ButtonType> result = dialog.showAndWait();
                 if (result.get() == ButtonType.YES) {
                     startNewGame();
+                } else if (result.get() == ButtonType.PREVIOUS) {
+                    btnGameBackPressed();
                 } else {
                     Platform.exit();
                     System.exit(0);
