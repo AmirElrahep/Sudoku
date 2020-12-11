@@ -62,7 +62,7 @@ public class App extends Application {
             scene.getStylesheets().clear();
             setUserAgentStylesheet(null);
             scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
-            dark.setStyle("-fx-text-fill: #CF5C36");
+            dark.setStyle("-fx-text-fill: #6893C6");
             light.setStyle(null);
 
         });
@@ -71,11 +71,11 @@ public class App extends Application {
             scene.getStylesheets().clear();
             setUserAgentStylesheet(null);
             scene.getStylesheets().add(getClass().getResource("css/light.css").toExternalForm());
-            light.setStyle("-fx-text-fill: #CF5C36");
+            light.setStyle("-fx-text-fill: #6893C6");
             dark.setStyle(null);
         });
 
-        dark.setStyle("-fx-text-fill: #CF5C36");
+        dark.setStyle("-fx-text-fill: #6893C6");
         themeMenu.getItems().addAll(dark, light);
 
         // help menu

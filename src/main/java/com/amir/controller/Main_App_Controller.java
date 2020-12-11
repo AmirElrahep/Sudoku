@@ -92,7 +92,13 @@ public class Main_App_Controller implements Initializable {
      * These are the labels for the game board. lbl1 - lbl81 represent each individual square on the board.
      */
     @FXML
+    private Label lblSudoku;
+    @FXML
     private Label lblVersion;
+    @FXML
+    private Label lblAuthor;
+    @FXML
+    private Label lblSelectDifficulty;
     @FXML
     private Label lblDifficulty;
     @FXML
@@ -267,23 +273,12 @@ public class Main_App_Controller implements Initializable {
     private int K = 0;
     private sudokuGenerator sg = new sudokuGenerator();
 
-    // testing
-//    private String primaryColor = "-fx-background-color: #2A2E37";
-//    private String secondaryColor = "-fx-background-color: #92D1C2"; //00bcf2
-//    private String selectionColor = "-fx-background-color: #353a45";
 
+    /**
+     * This sets ups the secondar and selection colors when a selection on the game board is made.
+     */
     private final String secondaryColor = "-fx-background-color: #3B3F41";
     private final String selectionColor = "-fx-background-color: #53595c";
-
-    private void themeColor() {
-        if (btnReset.getBackground().getFills().toString().equalsIgnoreCase("[javafx.scene.layout.BackgroundFill@19665c40]")) {
-//            secondaryColor = "-fx-background-color: #3B3F41";
-//            selectionColor = "-fx-background-color: #53595c";
-        } else {
-//            secondaryColor = "-fx-background-color: #3B3F41";
-//            selectionColor = "-fx-background-color: #53595c";
-        }
-    }
 
 
     // private helper methods
@@ -494,7 +489,7 @@ public class Main_App_Controller implements Initializable {
     /**
      * This method erases the game board from everything. It first calls the restGameBoardColor method.
      * Creates a 2d-array of labels by calling the createGameBoard method. Loops through the 2d-array and sets
-     * the text fill property to white for each square and sets the each square to null. Re-instantiates the
+     * the text fill property to blue for each square and sets the each square to null. Re-instantiates the
      * sudokuGenerator object, sg.
      */
     private void eraseGameBoard() {
@@ -503,7 +498,7 @@ public class Main_App_Controller implements Initializable {
 
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                board[row][col].setTextFill(Color.WHITE);
+                board[row][col].setTextFill(Color.rgb(104, 147, 198));
                 board[row][col].setText(null);
             }
         }
@@ -566,7 +561,7 @@ public class Main_App_Controller implements Initializable {
     private void generatePuzzle() {
         sg.unsolvedPuzzle();
 
-        // printing the solved board to the terminal (for testing purposes)
+        // (for testing) printing the solved board to the terminal
         //System.out.println("Solution\n" + Arrays.deepToString(sg.returnSolvedBoard()));
 
         int[][] tempBoard = sg.returnUnsolvedBoard();
@@ -658,19 +653,6 @@ public class Main_App_Controller implements Initializable {
         resetGameBoardColor();
         Label[][] board = createGameBoard();
 
-        // selecting colors based off of what theme is selected (dark/light)
-//        String row_columnColor;
-//        String selectionColor;
-//        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
-//            row_columnColor = "-fx-background-color: #425d77";
-//            selectionColor = "-fx-background-color: #3b536b";
-//        } else {
-//            row_columnColor = "-fx-background-color: #90a9c1";
-//            selectionColor = "-fx-background-color: #849fbb";
-//        }
-
-        themeColor(); // calling the theme color method
-
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 // checking if a selection is made
@@ -735,16 +717,6 @@ public class Main_App_Controller implements Initializable {
         int[][] solvedBoard = sg.returnSolvedBoard();
         Label[][] board = createGameBoard();
 
-        // selecting colors based off of what theme is selected (dark/light)
-//        String selectionColor;
-//        if (paneGame.getBackground().getFills().toString().equals("[javafx.scene.layout.BackgroundFill@4953c340]")) {
-//            selectionColor = "-fx-background-color: #3b536b";
-//        } else {
-//            selectionColor = "-fx-background-color: #849fbb";
-//        }
-
-        themeColor(); // calling the theme color method
-
         // using value from button pressed to display in puzzle as user input
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
@@ -777,7 +749,7 @@ public class Main_App_Controller implements Initializable {
                     }
                 }
             }
-            // printing the number and its occurrences to the terminal (for testing purposes)
+            // (for testing) printing the number and its occurrences to the terminal
             // (uncomment blank line at end of while loop)
             System.out.println(num + " occurs " + count + " times");
 
@@ -926,7 +898,7 @@ public class Main_App_Controller implements Initializable {
 
 
     /**
-     * This method initializes the Main App window when the program runs
+     * This method initializes the Main App window when the program runs.
      *
      * @param url            url
      * @param resourceBundle resourceBundle
@@ -940,6 +912,13 @@ public class Main_App_Controller implements Initializable {
         paneHome.setVisible(true);
         paneDifficulty.setVisible(false);
         paneGame.setVisible(false);
+
+        // setting colors for labels in the application
+        lblSudoku.setTextFill(Color.rgb(104, 147, 198));
+        lblVersion.setTextFill(Color.rgb(104, 147, 198));
+        lblAuthor.setTextFill(Color.rgb(104, 147, 198));
+        lblSelectDifficulty.setTextFill(Color.rgb(104, 147, 198));
+        lblDifficulty.setTextFill(Color.rgb(104, 147, 198));
     }
 
 }

@@ -1,20 +1,11 @@
 /* variable definitions */
 * {
     -fx-primary: #2B2B2B;
-    -fx-secondary: #ACACAC;
+    -fx-secondary: #F1F1F1;
     -fx-primarytext: #FFFFFF;
     -fx-secondarytext: #000000;
-
-    /* possible secondary colors
-    00bcf2
-    31c6c0
-    47d041
-    1976D2
-
-    ACCACF
-    9AB5BA
-    A1C3BB
-    92D1C2
+    /*
+     * #6893C6 blue color used
      */
 }
 
@@ -79,6 +70,6 @@
     -fx-text-fill: -fx-secondarytext;
 }
 
-.label{
+.label {
     -fx-font-family: ".SF NS Mono";
 }

@@ -15,14 +15,14 @@
    <children>
       <AnchorPane fx:id="paneHome" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" layoutX="248.0" layoutY="23.0" prefWidth="650.0" text="Sudoku" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="19.0">
+            <Label fx:id="lblSudoku" alignment="CENTER" layoutX="248.0" layoutY="23.0" prefWidth="650.0" text="Sudoku" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="19.0">
                <font>
                   <Font size="48.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="237.5" AnchorPane.rightAnchor="237.5" AnchorPane.topAnchor="125.0">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="238.0" AnchorPane.rightAnchor="237.0" AnchorPane.topAnchor="125.0">
                <image>
-                  <Image url="@images/logo.png" />
+                  <Image url="@images/logo_color.png" />
                </image>
             </ImageView>
             <JFXButton fx:id="btnNewGame" layoutX="218.0" layoutY="429.0" onMousePressed="#btnNewGamePressed" prefHeight="68.0" text="New Game" textFill="WHITE" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="217.0">
@@ -35,7 +35,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="277.0" layoutY="918.0" text="By: Amir Elrahep" textFill="WHITE" AnchorPane.bottomAnchor="14.0">
+            <Label fx:id="lblAuthor" alignment="CENTER" layoutX="277.0" layoutY="918.0" text="By: Amir Elrahep" textFill="WHITE" AnchorPane.bottomAnchor="14.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -44,7 +44,7 @@
       </AnchorPane>
       <AnchorPane fx:id="paneDifficulty" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="168.0" layoutY="19.0" text="Select Difficulty" textFill="WHITE" AnchorPane.topAnchor="19.0">
+            <Label fx:id="lblSelectDifficulty" layoutX="168.0" layoutY="19.0" text="Select Difficulty" textFill="WHITE" AnchorPane.topAnchor="19.0">
                <font>
                   <Font size="48.0" />
                </font>
@@ -53,7 +53,7 @@
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/back.png" />
+                        <Image url="@images/back_color.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -99,7 +99,7 @@
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/back.png" />
+                        <Image url="@images/back_color.png" />
                      </image>
                   </ImageView>
                </graphic>
