@@ -1,9 +1,3 @@
-/*
- * Author: Amir Elrahep
- * Date: 2/22/2020
- * Purpose: App class
- */
-
 package com.amir;
 
 import javafx.application.Application;
@@ -23,20 +17,22 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
+/**
+ * App class
+ *
+ * @author Amir Elrahep
+ * @since 2-22-2020
+ */
 public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
         BorderPane rootPane = new BorderPane();
-        //Scene scene = new Scene(loadFXML("Sudoku"));
-        //scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
-
         Parent content = loadFXML("Sudoku");
         rootPane.setCenter(content);
 
         Scene scene = new Scene(rootPane);
         scene.getStylesheets().add(getClass().getResource("css/dark.css").toExternalForm());
-
 
         // menu bar
         MenuBar menuBar = new MenuBar();

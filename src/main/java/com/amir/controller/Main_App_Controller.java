@@ -1,9 +1,3 @@
-/*
- * Author: Amir Elrahep
- * Date: 2/22/2020
- * Purpose: Controller class for the Main App
- */
-
 package com.amir.controller;
 
 import com.amir.App;
@@ -25,6 +19,12 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
+/**
+ * Controller class for the application
+ *
+ * @author Amir Elrahep
+ * @since 2-22-2020
+ */
 public class Main_App_Controller implements Initializable {
 
     /**
@@ -275,7 +275,7 @@ public class Main_App_Controller implements Initializable {
 
 
     /**
-     * This sets ups the secondar and selection colors when a selection on the game board is made.
+     * This sets up the secondary and selection colors when a selection on the game board is made.
      */
     private final String secondaryColor = "-fx-background-color: #3B3F41";
     private final String selectionColor = "-fx-background-color: #53595c";
@@ -905,9 +905,6 @@ public class Main_App_Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //createGameBoard(); // calling the createGameBoard method
-        //generatePuzzle(); // calling the generatePuzzle method
-
         lblVersion.setText("Version 1.0, built on May 10, 2020");
         paneHome.setVisible(true);
         paneDifficulty.setVisible(false);

@@ -1,13 +1,14 @@
-/*
- * Author: Amir Elrahep
- * Date: 3/9/2020
- * Purpose: Sudoku puzzle generator
- */
-
 package com.amir.model;
 
 import java.util.Arrays;
 
+
+/**
+ * Sudoku puzzle generator
+ *
+ * @author Amir Elrahep
+ * @since 3-09-2020
+ */
 public class sudokuGenerator {
 
     int[][] unsolvedBoard;
