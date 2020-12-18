@@ -641,18 +641,25 @@ public class MainApp_Controller implements Initializable {
     /**
      * This method changes the color of the selected square (label) and its corresponding row and column.
      * It first calls the restGameBoardColor method. Creates a 2d-array of labels by calling the createGameBoard
-     * method. Loops through the 2d-array checking if a square (label) is pressed, making a game board selection.
-     * If a selection is made, it loops through and changes the color of the corresponding squares (labels) in the
-     * selections x and y directions. Changes the color of the selected square (label) to be slightly lighter.
+     * method. Loops through the 2d-array checking if an existing selection is pressed again, if so the
+     * resetGameBoardColor method is called for de-selection. Otherwise it loops through the 2d-array checking if a
+     * square (label) is pressed, making a game board selection. If a selection is made, it loops through and changes
+     * the color of the corresponding squares (labels) in the selections x and y directions. Changes the color of the
+     * selected square (label) to be slightly lighter.
      */
     public void gameBoardSelection() {
-        resetGameBoardColor();
         Label[][] board = createGameBoard();
 
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                // checking if a selection is made
-                if (board[row][col].isPressed()) {
+                // checking is existing selection is pressed to de-select
+                if (board[row][col].isPressed() && board[row][col].getStyle().equals("-fx-background-color: #53595c")) {
+                    resetGameBoardColor();
+
+                    // checking if a new selection is made
+                } else if (board[row][col].isPressed()){
+                    resetGameBoardColor();
+
                     // changing the colors of the column and row of the selected label
                     for (int i = 0; i < 9; i++) {
                         board[i][col].setStyle(secondaryColor);
