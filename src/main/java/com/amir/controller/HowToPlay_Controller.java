@@ -29,7 +29,13 @@ public class HowToPlay_Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lblHowToPlayMsg.setWrapText(true);
-        lblHowToPlayMsg.setText("Sudoku is played on a grid of 9 x 9 spaces. Within the rows and columns are 9 “squares” (made up of 3 x 3 spaces). Each row, column and square (9 spaces each) needs to be filled out with the numbers 1-9, without repeating any numbers within the row, column or square.\n");
+        lblHowToPlayMsg.setText("The classic Sudoku game involves a grid of 81 squares. The grid is divided into nine blocks, each containing nine squares.\n" +
+                "\n" +
+                "The rules of the game are simple: each of the nine blocks has to contain all the numbers 1-9 within its squares. Each number can only appear once in a row, column or box.\n" +
+                "\n" +
+                "The difficulty lies in that each vertical nine-square column, or horizontal nine-square line across, within the larger square, must also contain the numbers 1-9, without repetition or omission.\n" +
+                "\n" +
+                "Every puzzle has just one correct solution.");
     }
 
 }

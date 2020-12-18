@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane prefHeight="200.0" prefWidth="400.0" stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.HowToPlay_Controller">
+<DialogPane prefHeight="350.0" prefWidth="500.0" stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.HowToPlay_Controller">
    <buttonTypes>
       <ButtonType fx:constant="OK" />
    </buttonTypes>
