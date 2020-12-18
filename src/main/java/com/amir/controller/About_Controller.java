@@ -29,7 +29,7 @@ public class About_Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lblAboutMsg.setWrapText(true);
-        lblAboutMsg.setText("Version 2.0\nBuild Date: December 18, 2020\nBy: Amir Elrahep");
+        lblAboutMsg.setText("Version 2.0\nBuild Date: December 18, 2020\n\nBy: Amir Elrahep");
     }
 
 }
