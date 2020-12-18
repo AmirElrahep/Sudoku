@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.Congratulations_Controller">
+<DialogPane stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.Congrats_Controller">
    <buttonTypes>
       <ButtonType fx:constant="YES" />
       <ButtonType fx:constant="CLOSE" />
@@ -25,7 +25,7 @@
       </ImageView>
    </graphic>
    <content>
-      <Label prefWidth="300.0" text="Congratulations you solved the puzzle! Do you want to start a new game? Press Close to quit the application or Previous to select a different difficulty." textFill="WHITE" wrapText="true">
+      <Label fx:id="lblCongratsMsg" prefWidth="300.0" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

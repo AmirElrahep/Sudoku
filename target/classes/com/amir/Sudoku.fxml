@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="950.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.Main_App_Controller">
+<AnchorPane prefHeight="950.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.MainApp_Controller">
    <children>
-      <AnchorPane fx:id="paneHome" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="paneHome" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="lblSudoku" alignment="CENTER" layoutX="248.0" layoutY="23.0" prefWidth="650.0" text="Sudoku" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="19.0">
                <font>
@@ -30,16 +30,6 @@
                   <Font size="33.0" />
                </font>
             </JFXButton>
-            <Label fx:id="lblVersion" alignment="CENTER" layoutX="144.0" layoutY="900.0" prefHeight="18.0" prefWidth="363.0" text="label" textFill="WHITE" AnchorPane.bottomAnchor="38.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblAuthor" alignment="CENTER" layoutX="277.0" layoutY="918.0" text="By: Amir Elrahep" textFill="WHITE" AnchorPane.bottomAnchor="14.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="paneDifficulty" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -93,7 +83,7 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="paneGame" layoutX="225.0" layoutY="275.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="paneGame" layoutX="225.0" layoutY="275.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton fx:id="btnGameBack" contentDisplay="CENTER" onMousePressed="#btnGameBackPressed" styleClass="back-button" text=" " AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
                <graphic>

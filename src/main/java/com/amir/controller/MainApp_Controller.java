@@ -23,9 +23,9 @@ import java.util.ResourceBundle;
  * Controller class for the application
  *
  * @author Amir Elrahep
- * @since 2-22-2020
+ * @since 11-28-2020
  */
-public class Main_App_Controller implements Initializable {
+public class MainApp_Controller implements Initializable {
 
     /**
      * These are the different anchor panes.
@@ -93,10 +93,6 @@ public class Main_App_Controller implements Initializable {
      */
     @FXML
     private Label lblSudoku;
-    @FXML
-    private Label lblVersion;
-    @FXML
-    private Label lblAuthor;
     @FXML
     private Label lblSelectDifficulty;
     @FXML
@@ -772,7 +768,7 @@ public class Main_App_Controller implements Initializable {
 
         if (Arrays.deepEquals(currentBoard, solvedBoard)) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Congratulations_Pane.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Congrats_Pane.fxml"));
                 DialogPane newGameDialogPane = fxmlLoader.load();
 
                 Dialog<ButtonType> dialog = new Dialog<>();
@@ -823,7 +819,7 @@ public class Main_App_Controller implements Initializable {
         resetGameBoardColor();
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Solve_Game_Pane.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("SolveGame_Pane.fxml"));
             DialogPane newGameDialogPane = fxmlLoader.load();
 
             Dialog<ButtonType> dialog = new Dialog<>();
@@ -867,7 +863,7 @@ public class Main_App_Controller implements Initializable {
 //        makeMove();
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("New_Game_Pane.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("NewGame_Pane.fxml"));
             DialogPane newGameDialogPane = fxmlLoader.load();
 
             Dialog<ButtonType> dialog = new Dialog<>();
@@ -905,15 +901,12 @@ public class Main_App_Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lblVersion.setText("Version 2.0, built on December 10, 2020");
         paneHome.setVisible(true);
         paneDifficulty.setVisible(false);
         paneGame.setVisible(false);
 
         // setting colors for labels in the application
         lblSudoku.setTextFill(Color.rgb(104, 147, 198));
-        lblVersion.setTextFill(Color.rgb(104, 147, 198));
-        lblAuthor.setTextFill(Color.rgb(104, 147, 198));
         lblSelectDifficulty.setTextFill(Color.rgb(104, 147, 198));
         lblDifficulty.setTextFill(Color.rgb(104, 147, 198));
     }

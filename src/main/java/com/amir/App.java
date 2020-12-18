@@ -5,9 +5,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
@@ -15,6 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 
 /**
@@ -50,7 +49,7 @@ public class App extends Application {
         menuBar.getMenus().add(themeMenu);
         rootPane.setTop(menuBar);
 
-        // switching between dark mode/light mode
+        // creating sub-menu buttons
         MenuItem dark = new MenuItem("Dark Mode");
         MenuItem light = new MenuItem("Light Mode");
 
@@ -72,6 +71,7 @@ public class App extends Application {
         });
 
         dark.setStyle("-fx-text-fill: #6893C6");
+        // adding sub-menu buttons to main menu button
         themeMenu.getItems().addAll(dark, light);
 
         // help menu
@@ -80,6 +80,42 @@ public class App extends Application {
         menuBar.getMenus().add(helpMenu);
         rootPane.setTop(menuBar);
 
+        // creating sub-menu buttons
+        MenuItem howToPlay = new MenuItem("How to play");
+        MenuItem about = new MenuItem("About");
+
+        howToPlay.setOnAction(ae -> {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("HowToPlay_Pane.fxml"));
+                DialogPane newGameDialogPane = fxmlLoader.load();
+
+                Dialog<ButtonType> dialog = new Dialog<>();
+                dialog.setDialogPane(newGameDialogPane);
+                dialog.setTitle("How to play");
+
+                Optional<ButtonType> result = dialog.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        about.setOnAction(ae -> {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("About_Pane.fxml"));
+                DialogPane newGameDialogPane = fxmlLoader.load();
+
+                Dialog<ButtonType> dialog = new Dialog<>();
+                dialog.setDialogPane(newGameDialogPane);
+                dialog.setTitle("About");
+
+                Optional<ButtonType> result = dialog.showAndWait();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        // adding sub-menu buttons to main menu button
+        helpMenu.getItems().addAll(howToPlay, about);
 
         stage.setTitle("Sudoku");
         stage.setScene(scene);
