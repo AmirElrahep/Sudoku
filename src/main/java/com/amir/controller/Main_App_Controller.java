@@ -905,7 +905,7 @@ public class Main_App_Controller implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lblVersion.setText("Version 1.0, built on May 10, 2020");
+        lblVersion.setText("Version 2.0, built on December 10, 2020");
         paneHome.setVisible(true);
         paneDifficulty.setVisible(false);
         paneGame.setVisible(false);
