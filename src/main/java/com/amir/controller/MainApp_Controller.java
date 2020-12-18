@@ -657,7 +657,7 @@ public class MainApp_Controller implements Initializable {
                     resetGameBoardColor();
 
                     // checking if a new selection is made
-                } else if (board[row][col].isPressed()){
+                } else if (board[row][col].isPressed()) {
                     resetGameBoardColor();
 
                     // changing the colors of the column and row of the selected label

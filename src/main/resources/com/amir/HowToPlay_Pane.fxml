@@ -4,9 +4,11 @@
 <?import javafx.scene.control.ButtonType?>
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane prefHeight="350.0" prefWidth="500.0" stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.HowToPlay_Controller">
+<DialogPane prefHeight="400.0" prefWidth="500.0" stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.HowToPlay_Controller">
    <buttonTypes>
       <ButtonType fx:constant="OK" />
    </buttonTypes>
@@ -20,4 +22,18 @@
          </font>
       </Label>
    </content>
+   <header>
+      <Label text="Sudoku Instructions" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/instructions_color.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+   </header>
 </DialogPane>
