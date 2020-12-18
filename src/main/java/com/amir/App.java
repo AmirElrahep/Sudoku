@@ -1,7 +1,6 @@
 package com.amir;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,7 +12,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Optional;
 
 
 /**
@@ -92,8 +90,7 @@ public class App extends Application {
                 Dialog<ButtonType> dialog = new Dialog<>();
                 dialog.setDialogPane(newGameDialogPane);
                 dialog.setTitle("How to play");
-
-                Optional<ButtonType> result = dialog.showAndWait();
+                dialog.showAndWait();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -107,8 +104,7 @@ public class App extends Application {
                 Dialog<ButtonType> dialog = new Dialog<>();
                 dialog.setDialogPane(newGameDialogPane);
                 dialog.setTitle("About");
-
-                Optional<ButtonType> result = dialog.showAndWait();
+                dialog.showAndWait();
             } catch (IOException e) {
                 e.printStackTrace();
             }
