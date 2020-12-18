@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
-import com.amir.model.sudokuGenerator;
+import com.amir.model.SudokuGenerator;
 
 import java.io.IOException;
 import java.net.URL;
@@ -267,7 +267,7 @@ public class MainApp_Controller implements Initializable {
      */
     private final int N = 9;
     private int K = 0;
-    private sudokuGenerator sg = new sudokuGenerator();
+    private SudokuGenerator sg = new SudokuGenerator();
 
 
     /**
@@ -499,7 +499,7 @@ public class MainApp_Controller implements Initializable {
             }
         }
 
-        sg = new sudokuGenerator(N, K);
+        sg = new SudokuGenerator(N, K);
     }
 
 
@@ -632,7 +632,7 @@ public class MainApp_Controller implements Initializable {
             }
         }
 
-        sg = new sudokuGenerator(N, K);
+        sg = new SudokuGenerator(N, K);
         generatePuzzle();
         makeMove();
     }

@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @author Amir Elrahep
  * @since 3-09-2020
  */
-public class sudokuGenerator {
+public class SudokuGenerator {
 
     int[][] unsolvedBoard;
     int[][] solvedBoard;
@@ -25,7 +25,7 @@ public class sudokuGenerator {
      * @param N size of the board
      * @param K number of missing elements
      */
-    public sudokuGenerator(int N, int K) {
+    public SudokuGenerator(int N, int K) {
         this.N = N;
         this.K = K;
 
@@ -40,7 +40,7 @@ public class sudokuGenerator {
     /**
      * This constructors takes zero parameters. Generates a 2d-array representing the size of the sudoku board.
      */
-    public sudokuGenerator() {
+    public SudokuGenerator() {
         // calculating the square root of N
         double SRNd = Math.sqrt(N);
         SRN = (int) SRNd;
