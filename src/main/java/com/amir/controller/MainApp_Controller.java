@@ -590,11 +590,6 @@ public class MainApp_Controller implements Initializable {
         paneDifficulty.setVisible(true);
     }
 
-    public void btnDifficultyBackPressed() {
-        paneDifficulty.setVisible(false);
-        paneHome.setVisible(true);
-    }
-
     public void btnGameBackPressed() {
         paneGame.setVisible(false);
         paneDifficulty.setVisible(true);
