@@ -675,24 +675,24 @@ public class MainApp_Controller implements Initializable {
 
     /**
      * This method makes the player move.
-     * <p>
+     *
      * -- Part one --
      * Creates a string variable str and sets it to null. Creates an array
      * list of buttons by calling the gameButtonList method. Loops through the array list checking which button
      * is pressed. If the button is the reset button, it calls the clearGameBoard method, if the button is the
      * clear button, it sets str to null, else it sets str to the button text.
-     * <p>
+     *
      * -- Part two --
      * Creates a 2d-array of integers that represents the current board. Creates a 2d-array of integers representing
      * the solved board. Creates a 2d-array of labels by calling the createGameBoard method. Loops through the
      * 2d-array to find the selected square (label) by checking the background color and checks if the text fill
      * property is not gray. If it passes the check then it sets the text to str and updates the currentBoard.
-     * <p>
+     *
      * -- Part three --
      * This part deals with disabling the game buttons (1-9 buttons) based of the number of occurrences each number has.
      * It calls the resetGameButtonDisable method to enable all of the buttons. Loops through the game and counts the
      * number of occurrences each number has. If a number occurs 9 times, the button for that number is disabled.
-     * <p>
+     *
      * -- Part four --
      * Checks if the currentBoard is equal to the solvedBoard (solution), if so, prompts the user if they want to start
      * a new game or quit the application via a dialog pane.
