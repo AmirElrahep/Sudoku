@@ -1,6 +1,7 @@
 package com.amir;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -37,7 +38,10 @@ public class App extends Application {
         Menu fileMenu = new Menu("File");
         MenuItem exitItem = new MenuItem("Exit");
         exitItem.setAccelerator(new KeyCodeCombination(KeyCode.X, KeyCombination.SHORTCUT_DOWN));
-        exitItem.setOnAction(ae -> System.exit(0));
+        exitItem.setOnAction(ae -> {
+            Platform.exit();
+            System.exit(0);
+        });
         fileMenu.getItems().add(exitItem);
         menuBar.getMenus().add(fileMenu);
 
