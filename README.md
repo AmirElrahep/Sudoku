@@ -19,7 +19,7 @@ Add more general information about project. What the purpose of the project is? 
 ## Screenshots
 
 ![start pane_dark](src/main/resources/com/amir/images/README images/start_pane.png)
-![start pane_dark](src/main/resources/com/amir/images/README images/difficulty_pane.png)
+![difficulty pane_dark](src/main/resources/com/amir/images/README images/difficulty_pane.png)
 ## Setup
 
 ## Contact
