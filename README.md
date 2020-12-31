@@ -18,8 +18,8 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Screenshots
 
-![Start Pane](./src/main/resources/com/amir/images/README images/start_pane.png)
-![Difficulty  Pane](./src/main/resources/com/amir/images/README images/difficulty_pane.png)
+![Start Pane](https://raw.githubusercontent.com/AmirElrahep/Sudoku/master/src/main/resources/com/amir/images/README%20images/start_pane.png?token=ARGPFDARJY42TOA7M6KP6VC75VNYI)
+![Difficulty  Pane](https://raw.githubusercontent.com/AmirElrahep/Sudoku/master/src/main/resources/com/amir/images/README%20images/difficulty_pane.png?token=ARGPFDFVJ77OSD7O3ESDN6K75VN3O)
 
 
 
