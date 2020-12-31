@@ -18,9 +18,8 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Screenshots
 
-Home - Dark | Home - Light
-:------------ :|:----------------:
-![start pane_dark](https://raw.githubusercontent.com/AmirElrahep/Sudoku/master/src/main/resources/com/amir/images/README%20images/start_pane_dark.png?token=ARGPFDBGJCZOUYLSEPFWIVC75U5VU)
+![start pane_dark](https://raw.githubusercontent.com/AmirElrahep/Sudoku/master/src/main/resources/com/amir/images/README%20images/start_pane.png?token=ARGPFDACL6E6O6SK4UHN5BC75U7IO)
+![start pane_dark](https://raw.githubusercontent.com/AmirElrahep/Sudoku/master/src/main/resources/com/amir/images/README%20images/difficulty_pane.png?token=ARGPFDDMRKIJBDRG3Q4QSIS75U7KI)
 
 ## Setup
 
