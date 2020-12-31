@@ -5,6 +5,7 @@ A modern desktop application of the classic Sudoku game.
 ## Table of contents
 
 * [General info](#general-info)
+    * [Built With](#built with)
 * [Screenshots](#screenshots)
 * [Features](#features)
 * [Setup](#setup)
@@ -16,6 +17,8 @@ A modern desktop application of the classic Sudoku game.
 
 Add more general information about project. What the purpose of the project is? Motivation?
 
+### Built With
+
 ## Screenshots
 
 ![Start Pane](src/main/resources/com/amir/images/README%20images/start_pane.png)
@@ -24,6 +27,10 @@ Add more general information about project. What the purpose of the project is? 
 
 
 ## Setup
+
+### Prerequisites
+
+### Installation
 
 ## Contact
 
