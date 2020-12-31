@@ -18,8 +18,8 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Screenshots
 
-![start pane_dark](https://raw.githubusercontent.com/AmirElrahep/Sudoku/master/src/main/resources/com/amir/images/README%20images/start_pane.png?token=ARGPFDEUNTRIR545SIH6JLS75VBWC)
-![start pane_dark](https://raw.githubusercontent.com/AmirElrahep/Sudoku/master/src/main/resources/com/amir/images/README%20images/difficulty_pane.png?token=ARGPFDG57HRWXHBDUSFFXJC75VBXS)
+![start pane_dark](src/main/resources/com/amir/images/README images/start_pane.png)
+![start pane_dark](src/main/resources/com/amir/images/README images/difficulty_pane.png)
 ## Setup
 
 ## Contact
