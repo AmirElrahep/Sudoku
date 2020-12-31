@@ -28,6 +28,10 @@ stress free paying environment.
 
 ![Start Pane](src/main/resources/com/amir/images/README%20images/start_pane.png)
 ![Difficulty Pane](src/main/resources/com/amir/images/README%20images/difficulty_pane.png)
+![Difficulty Pane](src/main/resources/com/amir/images/README%20images/game_pane.png)
+![Difficulty Pane](src/main/resources/com/amir/images/README%20images/game_pane_play.png)
+![Difficulty Pane](src/main/resources/com/amir/images/README%20images/game_play.gif)
+
 
 ## Setup
 
