@@ -15,7 +15,12 @@ A modern desktop application of the classic Sudoku game.
 
 ## General info
 
-Add more general information about project. What the purpose of the project is? Motivation?
+This is a more modern implementation of the classic game Sudoku. Unlike most Sudoku games, this is stress free as there
+is no pressure to finish the puzzle quickly and there is no scoring system. The current puzzle is never saved, so the
+user can quit and play again without the limitation of finishing a puzzle before moving on.
+
+Motivation behind the project was to make an elegant looking desktop application of the game Sudoku that provided a
+stress free paying environment.
 
 ### Built With
 
@@ -23,8 +28,6 @@ Add more general information about project. What the purpose of the project is? 
 
 ![Start Pane](src/main/resources/com/amir/images/README%20images/start_pane.png)
 ![Difficulty Pane](src/main/resources/com/amir/images/README%20images/difficulty_pane.png)
-
-
 
 ## Setup
 
