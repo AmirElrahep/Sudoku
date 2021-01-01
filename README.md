@@ -45,3 +45,5 @@ stress free paying environment.
 ## Contact
 
 Amir Elrahep - [LinkedIn](https://www.linkedin.com/in/amir-elrahep-4141a1154/)
+
+Amir Elrahep - <a href="https://www.linkedin.com/in/amir-elrahep-4141a1154/" target="_blank">LinkedIn</a>
