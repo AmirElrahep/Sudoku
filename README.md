@@ -23,6 +23,9 @@ Motivation behind the project was to make an elegant looking desktop application
 stress free paying environment.
 
 ### Built With
+* JavaFX
+* Maven
+* JFoenix
 
 ## Screenshots
 
