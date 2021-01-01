@@ -39,7 +39,7 @@ stress free paying environment.
 ## Features
 
 * Ability to change themes between Dark and Light mode
-* Multiple difficulty game modes
+* Multiple difficulty settings
 * Number button disable once has been used 9 times
 * Ability to clear a single square on the board using the Clear button
 * Ability to clear entire board using the Reset button
