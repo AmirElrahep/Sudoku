@@ -24,8 +24,8 @@ stress free paying environment.
 
 ### Built With
 * JavaFX
-* Maven
 * JFoenix
+* Maven
 
 ## Screenshots
 
