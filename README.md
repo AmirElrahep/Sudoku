@@ -42,7 +42,7 @@ stress free paying environment.
 * Multiple difficulty game modes
 * Number button disable once has been used 9 times
 * Ability to clear a single square on the board using the Clear button
-* Ability to clear a entire board using the Reset button
+* Ability to clear entire board using the Reset button
 * Conformation before starting a new game or solving the puzzle
 * Ability to start a new game, change difficulty setting, or quit application after successful completion of puzzle
 
