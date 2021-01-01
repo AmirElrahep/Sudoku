@@ -2,9 +2,9 @@
 
 A modern desktop application of the classic Sudoku game.
 
-## Table of contents
+## Table of Contents
 
-* [General info](#general-info)
+* [General Information](#general-information)
     * [Built With](#built-with)
 * [Screenshots](#screenshots)
 * [Features](#features)
@@ -13,7 +13,7 @@ A modern desktop application of the classic Sudoku game.
     * [Installation](installation)
 * [Contact](#contact)
 
-## General info
+## General Information
 
 This is a modern implementation of the classic game Sudoku. Unlike most Sudoku games, this is stress free as there is no
 pressure to finish the puzzle quickly and there is no scoring system. The current puzzle is never saved, so the user can
