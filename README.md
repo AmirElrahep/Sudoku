@@ -20,7 +20,7 @@ pressure to finish the puzzle quickly and there is no scoring system. The curren
 quit and start a new game without the limitation of finishing a puzzle before moving on.
 
 Motivation behind the project was to make an elegant looking desktop application of the game Sudoku that provided a
-stress free paying environment.
+stress free playing environment.
 
 ### Built With
 
