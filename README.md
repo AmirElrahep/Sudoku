@@ -35,7 +35,8 @@ stress free playing environment.
 ![Difficulty Pane](src/main/resources/com/amir/images/README%20images/difficulty_pane.png)  
 ![Game Pane](src/main/resources/com/amir/images/README%20images/game_pane.png)  
 ![Game Pane Play](src/main/resources/com/amir/images/README%20images/game_pane_play.png)  
-![Gameplay](src/main/resources/com/amir/images/README%20images/game_play.gif)
+![Gameplay](src/main/resources/com/amir/images/README%20images/game_play.gif)  
+![Gameplay](src/main/resources/com/amir/images/README%20images/test.gif)
 
 ## Features
 
