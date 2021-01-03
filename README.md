@@ -9,7 +9,7 @@ A modern desktop application of the classic Sudoku game.
 * [Screenshots and GamePlay](#screenshots-and-GamePlay)
 * [Features](#features)
 * [Setup](#setup)
-    * [Prerequisites / Useful Links](prerequisites-/-useful-links)
+    * [Prerequisites & Useful Links](prerequisites-&-useful-links)
     * [Installation](installation)
 * [Contact](#contact)
 
@@ -51,7 +51,7 @@ stress free paying environment.
 
 The following is the installation process for this project on IntelliJ IDEA using Maven.
 
-### Prerequisites / Useful Links
+### Prerequisites & Useful Links
 
 IntelliJ IDEA - [IntelliJ Download](https://www.jetbrains.com/idea/download/#section=mac)  
 Maven on IntelliJ - [Maven Setup](https://www.jetbrains.com/help/idea/maven-support.html#maven_import_project_start)  
