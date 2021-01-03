@@ -10,7 +10,7 @@ A modern desktop application of the classic Sudoku game.
 * [Features](#features)
 * [Setup](#setup)
     * [Prerequisites / Useful Links](#prerequisites-/-useful-links)
-    * [Installation](installation)
+    * [Installation](#installation)
 * [Contact](#contact)
 
 ## General Information
