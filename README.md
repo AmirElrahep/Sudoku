@@ -26,6 +26,7 @@ stress free playing environment.
 
 * JavaFX
 * JFoenix
+* CSS
 * Maven
 
 ## Screenshots and GamePlay
