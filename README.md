@@ -51,7 +51,7 @@ stress free paying environment.
 
 The following is the installation process for this project on IntelliJ IDEA using Maven.
 
-### Prerequisites / Useful Links
+### Prerequisites & Useful Links
 
 IntelliJ IDEA - [IntelliJ Download](https://www.jetbrains.com/idea/download/#section=mac)  
 Maven on IntelliJ - [Maven Setup](https://www.jetbrains.com/help/idea/maven-support.html#maven_import_project_start)  
