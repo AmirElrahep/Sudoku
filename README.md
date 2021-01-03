@@ -59,8 +59,9 @@ JFoenix - [JFoenix Download](https://github.com/jfoenixadmin/JFoenix)
 
 ### Installation
 
-Follow the download instructions for IntelliJ IDEA.  
-Clone the project - https://github.com/AmirElrahep/Sudoku.git  
+1. Follow the download instructions for IntelliJ IDEA.  
+2. Clone the project - https://github.com/AmirElrahep/Sudoku.git  
+3. Navigate to the App class - path to App: src/main/java/com/amir/App.java  
 Run and enjoy!
 
 ## Contact
