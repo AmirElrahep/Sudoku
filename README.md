@@ -39,8 +39,9 @@ stress free paying environment.
 ## Features
 
 * Ability to change themes between Dark and Light mode
+* Informative How To Play instructions
 * Multiple difficulty settings
-* Number button disable once has been used 9 times
+* Number button disable once it has been used 9 times
 * Ability to clear a single square on the board using the Clear button
 * Ability to clear entire board using the Reset button
 * Conformation before starting a new game or solving the puzzle
