@@ -6,7 +6,7 @@ A modern desktop application of the classic Sudoku game.
 
 * [General Information](#general-information)
     * [Built With](#built-with)
-* [Screenshots](#screenshots)
+* [Screenshots and GamePlay](#screenshots-and-GamePlay)
 * [Features](#features)
 * [Setup](#setup)
     * [Prerequisites](prerequisites)
@@ -28,7 +28,7 @@ stress free paying environment.
 * JFoenix
 * Maven
 
-## Screenshots
+## Screenshots and GamePlay
 
 ![Start Pane](src/main/resources/com/amir/images/README%20images/start_pane.png)
 ![Difficulty Pane](src/main/resources/com/amir/images/README%20images/difficulty_pane.png)
