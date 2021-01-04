@@ -749,7 +749,7 @@ public class MainApp_Controller implements Initializable {
             }
             // (for testing) printing the number and its occurrences to the terminal
             // (uncomment blank line at end of while loop)
-            System.out.println(num + " occurs " + count + " times");
+            //System.out.println(num + " occurs " + count + " times");
 
             // if number of occurrences is 9 times, disable corresponding button
             if (num != 0 && count == 9) {
@@ -760,7 +760,7 @@ public class MainApp_Controller implements Initializable {
             count = 0;
             num++;
         }// end while loop
-        System.out.println("\n");
+        //System.out.println("\n");
 
         // -- part four --
         // (for testing) uncomment following lines and comment out remainder of the method to bypass the dialog pane
