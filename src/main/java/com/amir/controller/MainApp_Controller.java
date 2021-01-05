@@ -672,10 +672,10 @@ public class MainApp_Controller implements Initializable {
      * This method makes the player move.
      * <p>
      * -- Part one --
-     * Creates a string variable str and sets it to null. Creates an array
-     * list of buttons by calling the gameButtonList method. Loops through the array list checking which button
-     * is pressed. If the button is the reset button, it calls the clearGameBoard method, if the button is the
-     * clear button, it sets str to null, else it sets str to the button text.
+     * Creates a string variable str and sets it to null. Creates an array list of buttons by calling the
+     * gameButtonList method. Loops through the array list checking which button is pressed. If the button is the
+     * reset button, it calls the clearGameBoard method, if the button is the clear button, it sets str to null,
+     * else it sets str to the button text.
      * <p>
      * -- Part two --
      * Creates a 2d-array of integers that represents the current board. Creates a 2d-array of integers representing
