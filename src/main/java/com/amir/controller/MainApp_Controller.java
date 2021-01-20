@@ -556,10 +556,6 @@ public class MainApp_Controller implements Initializable {
      */
     private void generatePuzzle() {
         sg.unsolvedPuzzle();
-
-        // (for testing) printing the solved board to the terminal
-        //System.out.println("Solution\n" + Arrays.deepToString(sg.returnSolvedBoard()));
-
         int[][] tempBoard = sg.returnUnsolvedBoard();
         Label[][] board = createGameBoard();
 
@@ -747,9 +743,6 @@ public class MainApp_Controller implements Initializable {
                     }
                 }
             }
-            // (for testing) printing the number and its occurrences to the terminal
-            // (uncomment blank line at end of while loop)
-            //System.out.println(num + " occurs " + count + " times");
 
             // if number of occurrences is 9 times, disable corresponding button
             if (num != 0 && count == 9) {
@@ -760,14 +753,8 @@ public class MainApp_Controller implements Initializable {
             count = 0;
             num++;
         }// end while loop
-        //System.out.println("\n");
 
         // -- part four --
-        // (for testing) uncomment following lines and comment out remainder of the method to bypass the dialog pane
-//        if (Arrays.deepEquals(currentBoard, solvedBoard)) {
-//            System.out.println("Congrats!");
-//        }
-
         if (Arrays.deepEquals(currentBoard, solvedBoard)) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Congrats_Pane.fxml"));
@@ -802,22 +789,6 @@ public class MainApp_Controller implements Initializable {
      * tempBoard to board.
      */
     public void solvePuzzle() {
-        // (for testing) uncomment following lines and comment out remainder of the method to bypass the dialog pane
-//        resetGameBoardColor();
-//
-//        int[][] tempBoard = sg.returnSolvedBoard();
-//        Label[][] board = createGameBoard();
-//
-//        for (int row = 0; row < 9; row++) {
-//            for (int col = 0; col < 9; col++) {
-//                if (tempBoard[row][col] == 0) {
-//                    board[row][col].setText("");
-//                } else {
-//                    board[row][col].setText(String.valueOf(tempBoard[row][col]));
-//                }
-//            }
-//        }
-
         resetGameBoardColor();
 
         try {
@@ -859,11 +830,6 @@ public class MainApp_Controller implements Initializable {
      * Calls the makeMove method to disable buttons if needed.
      */
     public void generateNewGame() {
-        // (for testing) uncomment following lines and comment out remainder of the method to bypass the dialog pane
-//        eraseGameBoard();
-//        generatePuzzle();
-//        makeMove();
-
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("NewGame_Pane.fxml"));
             DialogPane newGameDialogPane = fxmlLoader.load();
