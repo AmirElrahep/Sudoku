@@ -8,9 +8,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.About_Controller">
+<DialogPane stylesheets="@../css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.SolveGame_Controller">
    <buttonTypes>
-      <ButtonType fx:constant="CLOSE" />
+      <ButtonType fx:constant="YES" />
+      <ButtonType fx:constant="CANCEL" />
    </buttonTypes>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -18,12 +19,12 @@
    <graphic>
       <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/application images/about_color.png" />
+            <Image url="@../images/application images/warning_color.png" />
          </image>
       </ImageView>
    </graphic>
    <content>
-      <Label fx:id="lblAboutMsg" prefWidth="300.0" textFill="WHITE">
+      <Label fx:id="lblSolveGameMsg" prefWidth="300.0" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

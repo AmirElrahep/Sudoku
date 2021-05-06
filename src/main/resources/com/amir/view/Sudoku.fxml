@@ -22,7 +22,7 @@
             </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="238.0" AnchorPane.rightAnchor="237.0" AnchorPane.topAnchor="125.0">
                <image>
-                  <Image url="@images/application images/logo_color.png" />
+                  <Image url="@../images/application images/logo_color.png" />
                </image>
             </ImageView>
             <JFXButton fx:id="btnNewGame" layoutX="218.0" layoutY="429.0" onMousePressed="#btnNewGamePressed" prefHeight="68.0" text="New Game" textFill="WHITE" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="217.0">
@@ -80,7 +80,7 @@
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/application images/back_color.png" />
+                        <Image url="@../images/application images/back_color.png" />
                      </image>
                   </ImageView>
                </graphic>

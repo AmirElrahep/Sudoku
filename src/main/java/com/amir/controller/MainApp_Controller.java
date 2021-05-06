@@ -757,7 +757,7 @@ public class MainApp_Controller implements Initializable {
         // -- part four --
         if (Arrays.deepEquals(currentBoard, solvedBoard)) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Congrats_Pane.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/Congrats_Pane.fxml"));
                 DialogPane newGameDialogPane = fxmlLoader.load();
 
                 Dialog<ButtonType> dialog = new Dialog<>();
@@ -792,7 +792,7 @@ public class MainApp_Controller implements Initializable {
         resetGameBoardColor();
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("SolveGame_Pane.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/SolveGame_Pane.fxml"));
             DialogPane newGameDialogPane = fxmlLoader.load();
 
             Dialog<ButtonType> dialog = new Dialog<>();
@@ -831,7 +831,7 @@ public class MainApp_Controller implements Initializable {
      */
     public void generateNewGame() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("NewGame_Pane.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/NewGame_Pane.fxml"));
             DialogPane newGameDialogPane = fxmlLoader.load();
 
             Dialog<ButtonType> dialog = new Dialog<>();

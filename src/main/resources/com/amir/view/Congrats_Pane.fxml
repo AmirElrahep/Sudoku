@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
-<DialogPane stylesheets="@css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.Congrats_Controller">
+<DialogPane stylesheets="@../css/dialog.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amir.controller.Congrats_Controller">
    <buttonTypes>
       <ButtonType fx:constant="YES" />
       <ButtonType fx:constant="CLOSE" />
@@ -20,7 +20,7 @@
    <graphic>
       <ImageView fitHeight="150.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/application images/congratulations_color.png" />
+            <Image url="@../images/application images/congratulations_color.png" />
          </image>
       </ImageView>
    </graphic>
