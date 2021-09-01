@@ -271,7 +271,7 @@ public class MainApp_Controller implements Initializable {
 
 
     /**
-     * This sets up the secondary and selection colors when a selection on the game board is made.
+     * These set up the secondary and selection colors when a selection on the game board is made.
      */
     private final String secondaryColor = "-fx-background-color: #3B3F41";
     private final String selectionColor = "-fx-background-color: #53595c";
@@ -280,7 +280,7 @@ public class MainApp_Controller implements Initializable {
     // private helper methods
 
     /**
-     * This method creates an arrayList of buttons and adds all of the difficulty buttons to the array list.
+     * This method creates an arrayList of buttons and adds all the difficulty buttons to the array list.
      * Returns the arrayList of buttons.
      *
      * @return buttons
@@ -297,7 +297,7 @@ public class MainApp_Controller implements Initializable {
 
 
     /**
-     * This method creates an arrayList of buttons and adds all of the buttons for the game to the array list.
+     * This method creates an arrayList of buttons and adds all the buttons for the game to the array list.
      * Returns the arrayList of buttons.
      *
      * @return buttons
@@ -321,7 +321,7 @@ public class MainApp_Controller implements Initializable {
 
 
     /**
-     * This method creates an arrayList of labels and adds all of the labels for the game board to the array list.
+     * This method creates an arrayList of labels and adds all the labels for the game board to the array list.
      * Returns the arrayList of labels.
      *
      * @return labels
@@ -485,7 +485,7 @@ public class MainApp_Controller implements Initializable {
     /**
      * This method erases the game board from everything. It first calls the restGameBoardColor method.
      * Creates a 2d-array of labels by calling the createGameBoard method. Loops through the 2d-array and sets
-     * the text fill property to blue for each square and sets the each square to null. Re-instantiates the
+     * the text fill property to blue for each square and sets the square to null. Re-instantiates the
      * sudokuGenerator object, sg.
      */
     private void eraseGameBoard() {
@@ -551,7 +551,7 @@ public class MainApp_Controller implements Initializable {
      * sg calls the unsolvedPuzzle method which generates an unsolved sudoku puzzle. That puzzle is saved into
      * a 2d-array of integers called tempBoard. A 2d-array of labels, named board, is created and set to the
      * createGameBoard method. Loops through and sets the values from tempBoard to board. Values added to board
-     * textFill property are set to grey, indicating that it is the generated puzzle and not the users entry.
+     * textFill property are set to grey, indicating that it is the generated puzzle and not the users' entry.
      * Calls the resetGameButtonDisable method.
      */
     private void generatePuzzle() {
@@ -633,7 +633,7 @@ public class MainApp_Controller implements Initializable {
      * This method changes the color of the selected square (label) and its corresponding row and column.
      * It first calls the restGameBoardColor method. Creates a 2d-array of labels by calling the createGameBoard
      * method. Loops through the 2d-array checking if an existing selection is pressed again, if so the
-     * resetGameBoardColor method is called for de-selection. Otherwise it loops through the 2d-array checking if a
+     * resetGameBoardColor method is called for de-selection. Otherwise, it loops through the 2d-array checking if a
      * square (label) is pressed, making a game board selection. If a selection is made, it loops through and changes
      * the color of the corresponding squares (labels) in the selections x and y directions. Changes the color of the
      * selected square (label) to be slightly lighter.
@@ -681,7 +681,7 @@ public class MainApp_Controller implements Initializable {
      * <p>
      * -- Part three --
      * This part deals with disabling the game buttons (1-9 buttons) based of the number of occurrences each number has.
-     * It calls the resetGameButtonDisable method to enable all of the buttons. Loops through the game and counts the
+     * It calls the resetGameButtonDisable method to enable all the buttons. Loops through the game and counts the
      * number of occurrences each number has. If a number occurs 9 times, the button for that number is disabled.
      * <p>
      * -- Part four --
@@ -816,7 +816,7 @@ public class MainApp_Controller implements Initializable {
                     }
                 }
 
-                disableGameButtons(); // disabling all of the game buttons
+                disableGameButtons(); // disabling all the game buttons
             }
         } catch (IOException e) {
             e.printStackTrace();
