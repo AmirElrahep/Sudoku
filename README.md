@@ -15,12 +15,12 @@ A modern desktop application of the classic Sudoku game.
 
 ## General Information
 
-This is a modern implementation of the classic game Sudoku. Unlike most Sudoku games, this is stress free as there is no
+This is a modern implementation of the classic game Sudoku. Unlike most Sudoku games, this is stress-free as there is no
 pressure to finish the puzzle quickly and there is no scoring system. The current puzzle is never saved, so the user can
 quit and start a new game without the limitation of finishing a puzzle before moving on.
 
 Motivation behind the project was to make an elegant looking desktop application of the game Sudoku that provided a
-stress free playing environment.
+stress-free playing environment.
 
 ### Built With
 
@@ -35,7 +35,7 @@ stress free playing environment.
 ![Difficulty Pane](src/main/resources/com/amir/images/README%20images/difficulty_pane.png)  
 ![Game Pane](src/main/resources/com/amir/images/README%20images/game_pane.png)  
 ![Game Pane Play](src/main/resources/com/amir/images/README%20images/game_pane_play.png)  
-![Gameplay](src/main/resources/com/amir/images/README%20images/game_play.gif)  
+![Gameplay](src/main/resources/com/amir/images/README%20images/game_play.gif)
 
 ## Features
 
@@ -63,7 +63,7 @@ JFoenix - [JFoenix Download](https://github.com/jfoenixadmin/JFoenix)
 1. Follow the download instructions for IntelliJ IDEA.
 2. Clone the project - https://github.com/AmirElrahep/Sudoku.git
 3. Navigate to the App class
-   
+
    ```sh
    src/main/java/com/amir/App.java  
    ```
