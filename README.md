@@ -6,7 +6,7 @@ A modern desktop application of the classic Sudoku game.
 
 * [General Information](#general-information)
     * [Built With](#built-with)
-* [Screenshots and Gameplay](#screenshots-and-Gameplay)
+* [Screenshots and Gameplay](#screenshots-and-gameplay)
 * [Features](#features)
 * [Setup](#setup)
     * [Prerequisites & Useful Links](#prerequisites--useful-links)
